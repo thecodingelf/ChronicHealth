@@ -1,14 +1,21 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      ChronicHealth
     </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="goToProfile()">
+          <ion-icon name="person"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+
+    <button ion-button block class="button-one" (click)="showRateMyPain()">Rate Your Pain</button>
+    
+    <button ion-button block class="button-one" (click)="showLiveStream()">Live Stream</button>
+
+</ion-content> 

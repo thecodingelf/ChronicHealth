@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        ChronicHealth
+      </ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="logOut()">
+            <ion-icon name="log-out"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-list-header>
+      Account Information
+    </ion-list-header>
+
+    <ion-item (click)="updateUserName()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>Username</ion-col>
+          <ion-col col-6 *ngIf="userProfile?.userName">
+            {{userProfile?.userName}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.userName">
+            <span>Click To Edit</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateCountry()">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>Country</ion-col>
+            <ion-col col-6 *ngIf="userProfile?.Country">
+              {{userProfile?.Country}}
+            </ion-col>
+            <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.Country">
+              <span>Click To Edit</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+    <ion-item (click)="updateEmail()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>Email</ion-col>
+          <ion-col col-6 *ngIf="userProfile?.email">
+            {{userProfile?.email}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.email">
+            <span>Click To Edit</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updatePassword()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>Password</ion-col>
+          <ion-col col-6 class="placeholder-profile">
+            <span>Click To Edit</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content> 

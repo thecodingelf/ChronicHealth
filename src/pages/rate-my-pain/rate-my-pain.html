@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        Chronic Health
+      </ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="logOut()">
+            <ion-icon name="log-out"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+
+    
+
+    <h2>Activities:</h2>
+
+    <ion-list>
+      <ion-item *ngFor="let log of logList" no-lines>
+        <h3>{{log?.log}}</h3>
+        <p>Time: {{log?.time}}</p>
+        <p>Level Of Pain: <ion-badge>{{log?.painlevel}}</ion-badge></p>
+      </ion-item>
+    </ion-list>
+
+    <ion-fab bottom center>
+      <button ion-fab color="primary" (click)="goToAddLog()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+
+</ion-content>

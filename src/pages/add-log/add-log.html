@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      ChronicHealth
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label stacked>Name Of The Log</ion-label>
+    <ion-input [(ngModel)]="logActivity" type="text" placeholder="Name Of The Activity ?">
+    </ion-input>
+  </ion-item> 
+
+  <!--  <ion-item>
+    <ion-label>Level Of The Pain</ion-label>
+    <ion-input [(ngModel)]="logPainLevel" type="number" placeholder="Level Of Your Pain ?"></ion-input>
+  </ion-item> -->
+
+  <ion-item>
+    <ion-label>Level Of The Pain</ion-label>
+    <ion-select [(ngModel)]="logPainLevel" multiple="false" required placeholder="Level Of Your Pain ?">
+      <ion-option value="1">1</ion-option>
+      <ion-option value="2">2</ion-option>
+      <ion-option value="3">3</ion-option>
+      <ion-option value="4">4</ion-option>
+      <ion-option value="5">5</ion-option>
+      <ion-option value="6">6</ion-option>
+      <ion-option value="7">7</ion-option>
+      <ion-option value="8">8</ion-option>
+      <ion-option value="9">9</ion-option>
+      <ion-option value="10">10</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Time Of The Log</ion-label>
+    <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="logTime"></ion-datetime>
+  </ion-item>
+
+  <button ion-button block (click)="createLog(logActivity, logPainLevel, logTime)">Add Log</button>
+
+</ion-content>

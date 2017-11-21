@@ -1,0 +1,17 @@
+page-live-stream {
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footer #post:first-child {
+        flex-grow: 1;
+    }
+
+    #post {
+        border-radius: 0;
+        margin: 0;
+    }
+
+}
