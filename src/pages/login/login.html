@@ -2,7 +2,7 @@
 
   <ion-item no-lines>
     <img class="img-responsive" src="{{logo}}" />
-  </ion-item> 
+  </ion-item>
 
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
     <ion-item>
@@ -22,7 +22,8 @@
       <p>Your password needs more than 6 characters.</p>
     </ion-item>
     <button ion-button block type="submit" [disabled]="!loginForm.valid" icon-right>
-      Log In <ion-icon name="log-in"></ion-icon>
+      Log In
+      <ion-icon name="log-in"></ion-icon>
     </button>
   </form>
   <button ion-button block clear (click)="goToRegister()">
@@ -31,4 +32,5 @@
   <button ion-button block clear (click)="goToResetPassword()">
     Forgot Password
   </button>
+
 </ion-content>

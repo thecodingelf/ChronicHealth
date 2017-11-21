@@ -1,35 +1,75 @@
 <ion-header>
-    <ion-navbar color="primary">
-      <ion-title>
-        Chronic Health
-      </ion-title>
-      <ion-buttons end>
-          <button ion-button icon-only (click)="logOut()">
-            <ion-icon name="log-out"></ion-icon>
-          </button>
-        </ion-buttons>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Chronic Health
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
 
 
 <ion-content padding>
 
-    
+  <div padding>
+    <ion-segment [(ngModel)]="logs">
+      <ion-segment-button value="logyourpain">
+        RateYourPain
+      </ion-segment-button>
+      <ion-segment-button value="diary">
+        Diary
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
-    <h2>Activities:</h2>
+  <div [ngSwitch]="logs">
 
-    <ion-list>
-      <ion-item *ngFor="let log of logList" no-lines>
-        <h3>{{log?.log}}</h3>
-        <p>Time: {{log?.time}}</p>
-        <p>Level Of Pain: <ion-badge>{{log?.painlevel}}</ion-badge></p>
-      </ion-item>
-    </ion-list>
+    <div *ngSwitchCase="'logyourpain'">
+      <h2>Activities:</h2>
 
-    <ion-fab bottom center>
-      <button ion-fab color="primary" (click)="goToAddLog()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-fab>
+      <ion-list>
+        <ion-item *ngFor="let log of logList" no-lines>
+          <h3>{{log?.log}}</h3>
+          <p>Time: {{log?.time}}</p>
+          <p>Level Of Pain:
+            <ion-badge>{{log?.painlevel}}</ion-badge>
+          </p>
+        </ion-item>
+      </ion-list>
+
+      <ion-fab bottom center>
+        <button ion-fab color="primary" (click)="goToAddLog()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-fab>
+    </div>
+
+    <div *ngSwitchCase="'diary'">
+
+      <ion-card *ngFor="let diary of diaryLog">
+
+        <p>{{diary?.diary}}</p>
+
+      </ion-card>
+
+    </div>
+
+  </div>
 
 </ion-content>
+
+<div [ngSwitch]="logs">
+  <div *ngSwitchCase="'diary'">
+
+    <ion-footer>
+      <ion-item>
+        <ion-input type="text" placeholder="Type here..." [(ngModel)]="diaryEntry"></ion-input>
+        <button [name]="adddiary" ion-button clear item-end (click)="createDiary(diaryEntry)">Send <ion-icon name="send"></ion-icon></button>
+      </ion-item>
+    </ion-footer>
+
+  </div>
+</div>

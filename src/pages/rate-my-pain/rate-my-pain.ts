@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+// Providers.
 import { AuthProvider } from '../../providers/auth/auth';
 import { LogProvider } from '../../providers/log/log';
+import { DiaryProvider } from '../../providers/diary/diary';
+// Service.
 import { ToastService } from "../../services/toast/toast.service";
 
 
@@ -12,9 +15,19 @@ import { ToastService } from "../../services/toast/toast.service";
 })
 export class RateMyPainPage {
 
+  logs: string = "logyourpain";
+
+  public diaryLog: Array<any>;
+
   public logList: Array<any>;
 
-  constructor(private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider) {
+  constructor(private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public diaryProvider: DiaryProvider) {
+  }
+
+  createDiary(diaryEntry: string): void {
+    this.diaryProvider
+      .createDiary(diaryEntry)
+      .then(newDiary => {});
   }
 
   goToAddLog(): void {
@@ -40,6 +53,18 @@ export class RateMyPainPage {
         return false;
       });
     });
+
+    this.diaryProvider.getDiary().on("value", diaryLogSnapshot => {
+      this.diaryLog = [];
+      diaryLogSnapshot.forEach(snap => {
+        this.diaryLog.push({
+          id: snap.key,
+          diary: snap.val().diary
+        });
+        return false;
+      });
+    });
+
   }
 
 } 

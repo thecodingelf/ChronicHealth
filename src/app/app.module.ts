@@ -14,6 +14,7 @@ import { ProfileProvider } from '../providers/profile/profile';
 // Services.
 import { ToastService } from '../services/toast/toast.service';
 import { ChatProvider } from '../providers/chat/chat';
+import { DiaryProvider } from '../providers/diary/diary';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ChatProvider } from '../providers/chat/chat';
     ProfileProvider,
     ToastService,
     ProfileProvider,
-    ChatProvider
+    ChatProvider,
+    DiaryProvider
   ]
 })
 export class AppModule {}
