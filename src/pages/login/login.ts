@@ -71,7 +71,7 @@ export class LoginPage {
 
   goToRegister(): void {
     this.navCtrl.push('SignupPage');
-  }
+  } 
   goToResetPassword(): void {
     this.navCtrl.push('ResetPasswordPage');
   }

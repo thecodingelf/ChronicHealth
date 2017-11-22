@@ -49,9 +49,9 @@
 
     <div *ngSwitchCase="'diary'">
 
-      <ion-card *ngFor="let diary of diaryLog">
+      <ion-card *ngFor="let diary of diaryLog" padding>
 
-        <p>{{diary?.diary}}</p>
+        <p class="diary-text">{{diary?.diary}}</p>
 
       </ion-card>
 
@@ -67,7 +67,7 @@
     <ion-footer>
       <ion-item>
         <ion-input type="text" placeholder="Type here..." [(ngModel)]="diaryEntry"></ion-input>
-        <button [name]="adddiary" ion-button clear item-end (click)="createDiary(diaryEntry)">Send <ion-icon name="send"></ion-icon></button>
+        <button ion-button clear item-right (click)="createDiary(diaryEntry)">Send <ion-icon name="send"></ion-icon></button>
       </ion-item>
     </ion-footer>
 
