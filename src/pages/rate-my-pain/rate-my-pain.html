@@ -28,11 +28,12 @@
   <div [ngSwitch]="logs">
 
     <div *ngSwitchCase="'logyourpain'">
+
       <h2>Activities:</h2>
 
       <ion-list>
-        <ion-item class="" *ngFor="let log of logList" no-lines padding>
-          <h3>{{log?.log}}</h3>
+        <ion-item class="log-item" *ngFor="let log of logList" no-lines>
+          <h2>{{log?.log}}</h2>
           <p>Time: {{log?.time}}</p>
           <p>Level Of Pain:
             <ion-badge [ngClass]="{ badgeColor: log?.painlevel >= 7 }" [color]="log?.painlevel <= 5 ? 'secondary' : 'medium'">{{log?.painlevel}}</ion-badge>
@@ -62,9 +63,11 @@
 
     <ion-footer>
       <ion-item>
-        <button icon-only center color="primary" (click)="goToAddLog()">
-          <ion-icon name="add" color="primary"></ion-icon>
-        </button>
+        <ion-fab class="add-fab" bottom center>
+          <button ion-fab mini color="primary" (click)="goToAddLog()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-fab>
       </ion-item>
     </ion-footer>
 
