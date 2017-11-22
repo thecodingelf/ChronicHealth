@@ -28,7 +28,7 @@ export class RateMyPainPage {
     this.diaryProvider
       .createDiary(diaryEntry)
       .then(newDiary => {});
-  } 
+  }
 
   goToAddLog(): void {
     this.navCtrl.push('AddLogPage');
