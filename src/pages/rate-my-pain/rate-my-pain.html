@@ -31,20 +31,15 @@
       <h2>Activities:</h2>
 
       <ion-list>
-        <ion-item class="" *ngFor="let log of logList" no-lines>
+        <ion-item class="" *ngFor="let log of logList" no-lines padding>
           <h3>{{log?.log}}</h3>
           <p>Time: {{log?.time}}</p>
           <p>Level Of Pain:
-            <ion-badge>{{log?.painlevel}}</ion-badge>
+            <ion-badge [ngClass]="{ badgeColor: log?.painlevel >= 7 }" [color]="log?.painlevel <= 5 ? 'secondary' : 'medium'">{{log?.painlevel}}</ion-badge>
           </p>
         </ion-item>
       </ion-list>
 
-      <ion-fab bottom center>
-        <button ion-fab color="primary" (click)="goToAddLog()">
-          <ion-icon name="add"></ion-icon>
-        </button>
-      </ion-fab>
     </div>
 
     <div *ngSwitchCase="'diary'">
@@ -62,12 +57,27 @@
 </ion-content>
 
 <div [ngSwitch]="logs">
+
+  <div *ngSwitchCase="'logyourpain'">
+
+    <ion-footer>
+      <ion-item>
+        <button icon-only center color="primary" (click)="goToAddLog()">
+          <ion-icon name="add" color="primary"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-footer>
+
+  </div>
+
   <div *ngSwitchCase="'diary'">
 
     <ion-footer>
       <ion-item>
         <ion-input type="text" placeholder="Type here..." [(ngModel)]="diaryEntry"></ion-input>
-        <button ion-button clear item-right (click)="createDiary(diaryEntry)">Send <ion-icon name="send"></ion-icon></button>
+        <button ion-button clear item-right (click)="createDiary(diaryEntry)">Send
+          <ion-icon name="send"></ion-icon>
+        </button>
       </ion-item>
     </ion-footer>
 
