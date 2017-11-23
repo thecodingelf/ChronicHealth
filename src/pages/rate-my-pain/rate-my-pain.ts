@@ -6,6 +6,7 @@ import { LogProvider } from '../../providers/log/log';
 import { DiaryProvider } from '../../providers/diary/diary';
 // Service.
 import { ToastService } from "../../services/toast/toast.service";
+import { TranslateService } from '@ngx-translate/core';
 
 
 @IonicPage()
@@ -21,13 +22,13 @@ export class RateMyPainPage {
 
   public logList: Array<any>;
 
-  constructor(private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public diaryProvider: DiaryProvider) {
+  constructor(private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public diaryProvider: DiaryProvider, public translateService: TranslateService) {
   }
 
-  createDiary(diaryEntry: string): void {
+  createDiary(diaryEntry: string = ''): void {
     this.diaryProvider
       .createDiary(diaryEntry)
-      .then(newDiary => { });
+      .then(newDiary => {});
   }
 
   goToAddLog(): void {

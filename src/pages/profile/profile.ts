@@ -3,6 +3,7 @@ import { Alert, AlertController, IonicPage, NavController } from 'ionic-angular'
 import { ProfileProvider } from "../../providers/profile/profile";
 import { AuthProvider } from '../../providers/auth/auth';
 import { ToastService } from "../../services/toast/toast.service";
+import { TranslateService } from '@ngx-translate/core';
 
 
 @IonicPage()
@@ -16,7 +17,7 @@ export class ProfilePage {
   public userName: string;
   public Country: string;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public authProvider: AuthProvider, public profileProvider: ProfileProvider, private toast: ToastService) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public authProvider: AuthProvider, public profileProvider: ProfileProvider, private toast: ToastService, public translateService: TranslateService) {
 
 
 

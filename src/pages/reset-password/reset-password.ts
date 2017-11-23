@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Alert, AlertController, IonicPage, NavController } from "ionic-angular";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { TranslateService } from '@ngx-translate/core';
 import { AuthProvider } from "../../providers/auth/auth";
 import { EmailValidator } from "../../validators/email";
 
@@ -13,7 +14,7 @@ export class ResetPasswordPage {
 
   public resetPasswordForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public authProvider: AuthProvider, public alertCtrl: AlertController, formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public authProvider: AuthProvider, public alertCtrl: AlertController, formBuilder: FormBuilder, public translateService: TranslateService) {
 
     this.resetPasswordForm = formBuilder.group({
       email: [

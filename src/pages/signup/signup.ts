@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Alert, AlertController, IonicPage, Loading, LoadingController, NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
 
@@ -13,13 +14,7 @@ export class SignupPage {
   public signupForm: FormGroup;
   public loading: Loading;
 
-  constructor(
-    public navCtrl: NavController,
-    public authProvider: AuthProvider,
-    public loadingCtrl: LoadingController,
-    public alertCtrl: AlertController,
-    formBuilder: FormBuilder
-  ) {
+  constructor( public navCtrl: NavController, public authProvider: AuthProvider, public loadingCtrl: LoadingController, public alertCtrl: AlertController, formBuilder: FormBuilder, public translateService: TranslateService) {
 
     this.signupForm = formBuilder.group({
       email: [

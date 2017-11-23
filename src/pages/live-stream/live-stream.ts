@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { ToastService } from "../../services/toast/toast.service";
+import { TranslateService } from '@ngx-translate/core';
 import firebase from 'firebase'; 
 
 
@@ -17,7 +18,7 @@ export class LiveStreamPage {
   newmessage;
   messagesList;
 
-  constructor(private toast: ToastService, public navCtrl: NavController, public alert: AlertController, public authProvider: AuthProvider) {
+  constructor(private toast: ToastService, public navCtrl: NavController, public alert: AlertController, public authProvider: AuthProvider, public translateService: TranslateService) {
 
     this.ref = firebase.database().ref('messages');
 
@@ -39,13 +40,13 @@ export class LiveStreamPage {
   ionViewDidLoad() {
 
     this.alert.create({
-      title: 'Chatname',
+      title: 'Chat',
       inputs: [{
-        name: 'chatname',
-        placeholder: 'chatname'
+        name: 'Chat Käyttäjänimi',
+        placeholder: 'chat käyttäjänimi'
       }],
       buttons: [{
-        text: 'Continue',
+        text: 'Jatka',
         handler: chatname => {
           this.name = chatname
         }

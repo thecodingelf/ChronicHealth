@@ -17,10 +17,10 @@
   <div padding>
     <ion-segment [(ngModel)]="logs">
       <ion-segment-button value="logyourpain">
-        RateYourPain
+        {{ 'RATEYOURPAIN_BUTTON' | translate }}
       </ion-segment-button>
       <ion-segment-button value="diary">
-        Diary
+        {{ 'DIARY' | translate }}
       </ion-segment-button>
     </ion-segment>
   </div>
@@ -29,13 +29,13 @@
 
     <div *ngSwitchCase="'logyourpain'">
 
-      <h2>Activities:</h2>
+      <h2>{{ 'ACTIVITIES' | translate }}:</h2>
 
       <ion-list>
         <ion-item class="log-item" *ngFor="let log of logList" no-lines>
           <h2>{{log?.log}}</h2>
-          <p>Time: {{log?.time}}</p>
-          <p>Level Of Pain:
+          <p>{{ 'TIME' | translate }}: {{log?.time}}</p>
+          <p>{{ 'LEVELOFPAIN' | translate }}:
             <ion-badge [ngClass]="{ badgeColor: log?.painlevel >= 7 }" [color]="log?.painlevel <= 5 ? 'secondary' : 'medium'">{{log?.painlevel}}</ion-badge>
           </p>
         </ion-item>
@@ -77,8 +77,8 @@
 
     <ion-footer>
       <ion-item>
-        <ion-input type="text" placeholder="Type here..." [(ngModel)]="diaryEntry"></ion-input>
-        <button ion-button clear item-right (click)="createDiary(diaryEntry)">Send
+        <ion-input type="text" placeholder="{{ 'PLACEHOLDER_DIARY' | translate }}" [(ngModel)]="diaryEntry"></ion-input>
+        <button ion-button clear item-right (click)="createDiary(diaryEntry)">{{ 'SEND_BUTTON' | translate }}
           <ion-icon name="send"></ion-icon>
         </button>
       </ion-item>

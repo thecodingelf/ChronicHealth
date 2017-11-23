@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController, IonicPage, NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
-//import { ToastService } from './../../services/toast/toast.service';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @IonicPage()
 @Component({
@@ -11,14 +10,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public authProvider: AuthProvider) { }
-
-  /*
-  logOut(): void {
-    this.authProvider.logoutUser().then(() => {
-      this.navCtrl.setRoot('LoginPage').then(() => this.toast.show(`Succesfully Logout`));
-    });
-  } */
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public authProvider: AuthProvider, public translateService: TranslateService) { }
 
   goToProfile(): void {
     this.navCtrl.push('ProfilePage');

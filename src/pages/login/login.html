@@ -6,31 +6,31 @@
 
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
     <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="Your email address" [class.invalid]="!loginForm.controls.email.valid && blur">
+      <ion-label stacked>{{ 'EMAIL' | translate }}</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="{{ 'PLACEHOLDER_EMAIL' | translate }}" [class.invalid]="!loginForm.controls.email.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.dirty">
-      <p>Please enter a valid email address.</p>
+      <p>{{ 'REQUIREMENTS_EMAIL' | translate }}.</p>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Your password" [class.invalid]="!loginForm.controls.password.valid && blur">
+      <ion-label stacked>{{ 'PASSWORD' | translate }}</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="{{ 'PLACEHOLDER_PASSWORD' | translate }}" [class.invalid]="!loginForm.controls.password.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">
-      <p>Your password needs more than 6 characters.</p>
+      <p>{{ 'REQUIREMENTS_PASSWORD' | translate }}.</p>
     </ion-item>
     <button ion-button block type="submit" [disabled]="!loginForm.valid" icon-right>
-      Log In
+      {{ 'LOGIN_BUTTON' | translate }}
       <ion-icon name="log-in"></ion-icon>
     </button>
   </form>
   <button ion-button block clear (click)="goToRegister()">
-    Create a new account
+    {{ 'SIGNUP_BUTTON' | translate }}
   </button>
   <button ion-button block clear (click)="goToResetPassword()">
-    Forgot Password
+    {{ 'FORGOT_BUTTON' | translate }}
   </button>
 
 </ion-content>

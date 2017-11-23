@@ -16,18 +16,18 @@
 
   <ion-list>
     <ion-list-header>
-      Account Information
+      {{ 'ACCOUNT_INFORMATION' | translate }}
     </ion-list-header>
 
     <ion-item (click)="updateUserName()">
       <ion-grid>
         <ion-row>
-          <ion-col col-6>Username</ion-col>
+          <ion-col col-6>{{ 'USERNAME' | translate }}</ion-col>
           <ion-col col-6 *ngIf="userProfile?.userName">
             {{userProfile?.userName}}
           </ion-col>
           <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.userName">
-            <span>Click To Edit</span>
+            <span>{{ 'CLICK_EDIT' | translate }}</span>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -36,12 +36,12 @@
     <ion-item (click)="updateCountry()">
         <ion-grid>
           <ion-row>
-            <ion-col col-6>Country</ion-col>
+            <ion-col col-6>{{ 'COUNTRY' | translate }}</ion-col>
             <ion-col col-6 *ngIf="userProfile?.Country">
               {{userProfile?.Country}}
             </ion-col>
             <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.Country">
-              <span>Click To Edit</span>
+              <span>{{ 'CLICK_EDIT' | translate }}</span>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -50,12 +50,12 @@
     <ion-item (click)="updateEmail()">
       <ion-grid>
         <ion-row>
-          <ion-col col-6>Email</ion-col>
+          <ion-col col-6>{{ 'EMAIL' | translate }}</ion-col>
           <ion-col col-6 *ngIf="userProfile?.email">
             {{userProfile?.email}}
           </ion-col>
           <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.email">
-            <span>Click To Edit</span>
+            <span>{{ 'CLICK_EDIT' | translate }}</span>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -64,9 +64,9 @@
     <ion-item (click)="updatePassword()">
       <ion-grid>
         <ion-row>
-          <ion-col col-6>Password</ion-col>
+          <ion-col col-6>{{ 'PASSWORD' | translate }}</ion-col>
           <ion-col col-6 class="placeholder-profile">
-            <span>Click To Edit</span>
+            <span>{{ 'CLICK_EDIT' | translate }}</span>
           </ion-col>
         </ion-row>
       </ion-grid>

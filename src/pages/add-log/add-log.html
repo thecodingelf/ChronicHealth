@@ -10,8 +10,8 @@
 <ion-content padding>
 
   <ion-item>
-    <ion-label stacked>Name Of The Log</ion-label>
-    <ion-input [(ngModel)]="logActivity" type="text" placeholder="Name Of The Activity ?">
+    <ion-label stacked>{{ 'ACTIVITY_NAME' | translate }}</ion-label>
+    <ion-input [(ngModel)]="logActivity" type="text" placeholder="{{ 'ACTIVITY_PLACEHOLDER' | translate }} ?">
     </ion-input>
   </ion-item> 
 
@@ -21,8 +21,8 @@
   </ion-item> -->
 
   <ion-item>
-    <ion-label>Level Of The Pain</ion-label>
-    <ion-select [(ngModel)]="logPainLevel" multiple="false" required placeholder="Level Of Your Pain ?">
+    <ion-label>{{ 'LEVELOFPAIN' | translate }}</ion-label>
+    <ion-select [(ngModel)]="logPainLevel" multiple="false" required placeholder="{{ 'LEVELOFPAIN_PLACEHOLDER' | translate }} ?">
       <ion-option value="1">1</ion-option>
       <ion-option value="2">2</ion-option>
       <ion-option value="3">3</ion-option>
@@ -37,10 +37,10 @@
   </ion-item> 
 
   <ion-item>
-    <ion-label>Time Of The Log</ion-label>
+    <ion-label>{{ 'TIME_PICK' | translate }}</ion-label>
     <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="logTime"></ion-datetime>
   </ion-item>
 
-  <button ion-button block (click)="createLog(logActivity, logPainLevel, logTime)">Add Log</button>
+  <button ion-button block (click)="createLog(logActivity, logPainLevel, logTime)">{{ 'ADD_LOG' | translate }}</button>
 
-</ion-content> 
+</ion-content>

@@ -1,0 +1,54 @@
+{
+    "BACK_BUTTON_TEXT": "Takaisin",
+  
+    "ACCOUNT_INFORMATION": "Tilin Tiedot",
+    "COUNTRY": "Maa",
+    "EMAIL": "Sähköposti",
+    "USERNAME": "Käyttäjänimi",
+    "PASSWORD": "Salasana",
+    "LOGIN": "Kirjaudu Sisään",
+    "SIGNUP": "Rekisteröidy",
+
+    "CLICK_EDIT": "Muokkaa",
+
+    "PLACEHOLDER_EMAIL": "Sähköposti osoite",
+    "PLACEHOLDER_PASSWORD": "******",
+
+    "REQUIREMENTS_EMAIL": "Anna oikea sähköposti osoite",
+    "REQUIREMENTS_PASSWORD": "Salasanan tulee olla vähintään 6 kirjainta",
+  
+    "LOGIN_BUTTON": "Kirjaudu Sisään",
+    "SIGNUP_BUTTON": "Rekisteröidy",
+    "FORGOT_BUTTON": "Unohtuiko Salasana ?",
+    "CREATE_ACCOUNT": "Luo Tili",
+    "RESET_BUTTON": "Uusi Salasana",
+
+    "SEND_BUTTON": "Lähetä",
+
+    "RATEYOURPAIN_BUTTON": "Kipu Loki",
+
+    "DIARY": "Päiväkirja",
+
+    "ACTIVITIES": "Aktiviteetit",
+
+    "TIME": "Kello",
+
+    "LEVELOFPAIN": "Kivun Taso",
+
+    "LEVELOFPAIN_PLACEHOLDER": "Kivun Taso",
+
+    "TIME_PICK": "Kellonaika",
+
+    "ADD_LOG": "Lisää Loki",
+
+    "PLACEHOLDER_DIARY": "Kirjoita tähän...",
+
+    "ACTIVITY_NAME": "Aktiviteetin Nimi",
+
+    "ACTIVITY_PLACEHOLDER": "Aktiviteetti",
+
+    "PLACEHOLDER_LIVESTREAM": "Tulossa pian",
+
+    "PLACEHOLDER_CHAT": "Kirjoita tähän..."
+
+  }
