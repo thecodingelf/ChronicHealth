@@ -40,13 +40,13 @@ export class LiveStreamPage {
   ionViewDidLoad() {
 
     this.alert.create({
-      title: 'Chatname',
+      title: 'Chat',
       inputs: [{
         name: 'chatname',
-        placeholder: 'chatname'
+        placeholder: 'chat käyttäjänimi'
       }],
       buttons: [{
-        text: 'Continue',
+        text: 'Jatka',
         handler: chatname => {
           this.name = chatname
         }
