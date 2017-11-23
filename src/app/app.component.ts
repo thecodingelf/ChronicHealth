@@ -44,11 +44,11 @@ export class MyApp {
     // Set the default language for translation strings, and the current language.
     this.translate.setDefaultLang('fi');
 
-    if (this.translate.getBrowserLang() !== undefined) {
+/*     if (this.translate.getBrowserLang() !== undefined) {
       this.translate.use(this.translate.getBrowserLang());
     } else {
       this.translate.use('fi'); // Set your language here
-    }
+    } */
 
     this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
       this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);

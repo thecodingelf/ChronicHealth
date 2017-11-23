@@ -1,13 +1,13 @@
 <ion-content padding>
 
   <ion-item no-lines>
-    <img class="img-responsive" src="{{logo}}" />
+    <img class="img-responsive" src="{{logo}}" /> 
   </ion-item>
 
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
     <ion-item>
       <ion-label stacked>{{ 'EMAIL' | translate }}</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="{{ 'PLACEHOLDER_EMAIL' | translate }}" [class.invalid]="!loginForm.controls.email.valid && blur">
+      <ion-input formControlName="email" type="email" placeholder="{{ 'HOLDER_EMAIL' | translate }}" [class.invalid]="!loginForm.controls.email.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.dirty">
@@ -15,7 +15,7 @@
     </ion-item>
     <ion-item>
       <ion-label stacked>{{ 'PASSWORD' | translate }}</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="{{ 'PLACEHOLDER_PASSWORD' | translate }}" [class.invalid]="!loginForm.controls.password.valid && blur">
+      <ion-input formControlName="password" type="password" placeholder="{{ 'HOLDER_PASSWORD' | translate }}" [class.invalid]="!loginForm.controls.password.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">

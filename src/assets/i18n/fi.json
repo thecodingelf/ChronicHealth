@@ -11,8 +11,8 @@
 
     "CLICK_EDIT": "Muokkaa",
 
-    "PLACEHOLDER_EMAIL": "Sähköposti osoite",
-    "PLACEHOLDER_PASSWORD": "******",
+    "HOLDER_EMAIL": "Sähköposti osoite",
+    "HOLDER_PASSWORD": "******",
 
     "REQUIREMENTS_EMAIL": "Anna oikea sähköposti osoite",
     "REQUIREMENTS_PASSWORD": "Salasanan tulee olla vähintään 6 kirjainta",

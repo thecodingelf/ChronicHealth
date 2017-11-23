@@ -3,7 +3,7 @@
   <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
     <ion-item>
       <ion-label stacked>{{ 'EMAIL' | translate }}</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="{{ 'PLACEHOLDER_EMAIL' | translate }}" [class.invalid]="!signupForm.controls.email.valid && blur">
+      <ion-input formControlName="email" type="email" placeholder="{{ 'HOLDER_EMAIL' | translate }}" [class.invalid]="!signupForm.controls.email.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid
@@ -13,7 +13,7 @@
 
     <ion-item> 
       <ion-label stacked>{{ 'PASSWORD' | translate }}</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="{{ 'PLACEHOLDER_PASSWORD' | translate }}" [class.invalid]="!signupForm.controls.password.valid && blur">
+      <ion-input formControlName="password" type="password" placeholder="{{ 'HOLDER_PASSWORD' | translate }}" [class.invalid]="!signupForm.controls.password.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  &&

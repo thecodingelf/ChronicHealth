@@ -4,7 +4,7 @@
       ChronicHealth
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> 
 
 
 <ion-content padding>
@@ -13,12 +13,7 @@
     <ion-label stacked>{{ 'ACTIVITY_NAME' | translate }}</ion-label>
     <ion-input [(ngModel)]="logActivity" type="text" placeholder="{{ 'ACTIVITY_PLACEHOLDER' | translate }} ?">
     </ion-input>
-  </ion-item> 
-
-  <!--  <ion-item>
-    <ion-label>Level Of The Pain</ion-label>
-    <ion-input [(ngModel)]="logPainLevel" type="number" placeholder="Level Of Your Pain ?"></ion-input>
-  </ion-item> -->
+  </ion-item>
 
   <ion-item>
     <ion-label>{{ 'LEVELOFPAIN' | translate }}</ion-label>
@@ -34,7 +29,7 @@
       <ion-option value="9">9</ion-option>
       <ion-option value="10">10</ion-option>
     </ion-select>
-  </ion-item> 
+  </ion-item>
 
   <ion-item>
     <ion-label>{{ 'TIME_PICK' | translate }}</ion-label>
