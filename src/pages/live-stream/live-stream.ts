@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthProvider } from '../../providers/auth/auth';
 import { ToastService } from "../../services/toast/toast.service";
-import { TranslateService } from '@ngx-translate/core';
-import firebase from 'firebase'; 
+import firebase from 'firebase';
 
 
 @IonicPage()
@@ -40,13 +40,13 @@ export class LiveStreamPage {
   ionViewDidLoad() {
 
     this.alert.create({
-      title: 'Chat',
+      title: 'Chatname',
       inputs: [{
-        name: 'Chat Käyttäjänimi',
-        placeholder: 'chat käyttäjänimi'
+        name: 'chatname',
+        placeholder: 'chatname'
       }],
       buttons: [{
-        text: 'Jatka',
+        text: 'Continue',
         handler: chatname => {
           this.name = chatname
         }
