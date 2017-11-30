@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Alert, AlertController, IonicPage, Loading, LoadingController, NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { EmailValidator } from '../../validators/email';
 import { AuthProvider } from '../../providers/auth/auth';
 import firebase from 'firebase';
@@ -13,17 +13,19 @@ import firebase from 'firebase';
 })
 export class LoginPage {
 
+  langs = ['en', 'fi'];
+
   public logoRef: any;
   public logo: any; 
 
   public loginForm: FormGroup;
   public loading: Loading;
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public authProvider: AuthProvider, formBuilder: FormBuilder, public translateService: TranslateService) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public authProvider: AuthProvider, formBuilder: FormBuilder, public translate: TranslateService) {
 
     this.logoRef = firebase.storage().ref().child('img/');
     
-          this.logoRef.child('chlogo.png').getDownloadURL().then((url) => {
+          this.logoRef.child('ch.png').getDownloadURL().then((url) => {
             this.logo = url; 
     
       }); 
@@ -38,6 +40,20 @@ export class LoginPage {
         Validators.compose([Validators.required, Validators.minLength(6)])
       ]
     });
+
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+
+      if(event.lang == 'fi') {
+        this.translate.setDefaultLang('fi');
+      }
+
+      else {
+        this.translate.setDefaultLang('en');
+      }
+
+      console.log('Language changed ' + this.translate.currentLang);
+    });
+
   }
 
   loginUser(): void {
@@ -67,6 +83,10 @@ export class LoginPage {
       this.loading = this.loadingCtrl.create();
       this.loading.present();
     }
+  }
+
+  changeLanguage(language: string): void {
+    this.translate.use(language);
   }
 
   goToRegister(): void {

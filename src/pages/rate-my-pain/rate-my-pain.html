@@ -34,9 +34,10 @@
       <ion-list>
         <ion-item class="log-item" *ngFor="let log of logList" no-lines>
           <h2>{{log?.log}}</h2>
+          <p>{{ 'DATE' | translate }}: {{log?.date}}</p>
           <p>{{ 'TIME' | translate }}: {{log?.time}}</p>
           <p>{{ 'LEVELOFPAIN' | translate }}:
-            <ion-badge [ngClass]="{ badgeColor: log?.painlevel >= 7 }" [color]="log?.painlevel <= 5 ? 'secondary' : 'medium'">{{log?.painlevel}}</ion-badge>
+            <ion-badge [ngClass]="{ badgeColor: log?.painlevel >= 8 }" [color]="log?.painlevel <= 4 ? 'secondary' : 'medium'">{{log?.painlevel}}</ion-badge>
           </p>
         </ion-item>
       </ion-list>
@@ -47,7 +48,13 @@
 
       <ion-card *ngFor="let diary of diaryLog" padding>
 
-        <p class="diary-text">{{diary?.diary}}</p>
+        <ion-card-header>
+          {{diary?.date}}
+        </ion-card-header>
+
+        
+            <p class="diary-text">{{diary?.diary}}</p>
+    
 
       </ion-card>
 
@@ -61,27 +68,29 @@
 
   <div *ngSwitchCase="'logyourpain'">
 
-    <ion-footer>
-      <ion-item>
-        <ion-fab class="add-fab" bottom center>
-          <button ion-fab mini color="primary" (click)="goToAddLog()">
-            <ion-icon name="add"></ion-icon>
-          </button>
-        </ion-fab>
-      </ion-item>
+    <ion-footer class="footer-add-button">
+
+      <button ion-button icon-right full color="primary" (click)="goToAddLog()"> {{ 'CREATE_LOG' | translate }}
+        <ion-icon name="add"></ion-icon>
+      </button>
+
     </ion-footer>
 
   </div>
 
   <div *ngSwitchCase="'diary'">
 
-    <ion-footer>
-      <ion-item>
-        <ion-input type="text" placeholder="{{ 'PLACEHOLDER_DIARY' | translate }}" [(ngModel)]="diaryEntry"></ion-input>
-        <button ion-button clear item-right (click)="createDiary(diaryEntry)">{{ 'SEND_BUTTON' | translate }}
-          <ion-icon name="send"></ion-icon>
-        </button>
+    <ion-footer class="footer-bg">
+
+     <ion-item>
+      <ion-input type="text" placeholder="{{ 'PLACEHOLDER_DIARY' | translate }}" [(ngModel)]="diaryEntry" required></ion-input>
+      <button ion-button clear (click)="picker.open()">
+        <ion-datetime #picker pickerFormat="DD/MM" [(ngModel)]="dateEntry"></ion-datetime>
+        <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
+      </button>
+      <button ion-button clear item-right (click)="createDiary(diaryEntry, dateEntry)">{{ 'SEND_BUTTON' | translate }}</button>
       </ion-item>
+
     </ion-footer>
 
   </div>

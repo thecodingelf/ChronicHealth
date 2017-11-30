@@ -7,7 +7,7 @@
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
     <ion-item>
       <ion-label stacked>{{ 'EMAIL' | translate }}</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="{{ 'HOLDER_EMAIL' | translate }}" [class.invalid]="!loginForm.controls.email.valid && blur">
+      <ion-input formControlName="email" type="email" placeholder="{{ 'PLACEHOLDER_EMAIL' | translate }}" [class.invalid]="!loginForm.controls.email.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.dirty">
@@ -15,7 +15,7 @@
     </ion-item>
     <ion-item>
       <ion-label stacked>{{ 'PASSWORD' | translate }}</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="{{ 'HOLDER_PASSWORD' | translate }}" [class.invalid]="!loginForm.controls.password.valid && blur">
+      <ion-input formControlName="password" type="password" placeholder="{{ 'PLACEHOLDER_PASSWORD' | translate }}" [class.invalid]="!loginForm.controls.password.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">
@@ -34,3 +34,14 @@
   </button>
 
 </ion-content>
+
+<!-- <ion-footer>
+  <button ion-button clear (click)="changeLanguage('en')">En</button>
+  <button ion-button clear (click)="changeLanguage('fi')">Fi</button> -->
+<!--   <ion-item>
+    <ion-label>{{ 'SELECT_LANGUAGE' | translate }}:</ion-label>
+    <ion-select #langSelect (change)="translateService.use(langSelect.value)">
+      <ion-option *ngFor="let lang of langs" [value]="lang" [selected]="lang === translateService.currentLang">{{ lang }}</ion-option>
+    </ion-select>
+  </ion-item> -->
+<!-- </ion-footer> -->

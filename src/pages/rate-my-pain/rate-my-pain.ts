@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 // Providers.
 import { AuthProvider } from '../../providers/auth/auth';
 import { LogProvider } from '../../providers/log/log';
@@ -18,16 +18,18 @@ export class RateMyPainPage {
 
   logs: string = "logyourpain";
 
+  date: any = new Date();
+
   public diaryLog: Array<any>;
 
   public logList: Array<any>;
 
-  constructor(private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public diaryProvider: DiaryProvider, public translateService: TranslateService) {
+  constructor(private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public diaryProvider: DiaryProvider, public translateService: TranslateService, public alertCtrl: AlertController) {
   }
 
-  createDiary(diaryEntry: string = ''): void {
+  createDiary(diaryEntry: string = '', dateEntry: any = this.date): void {
     this.diaryProvider
-      .createDiary(diaryEntry)
+      .createDiary(diaryEntry, dateEntry)
       .then(newDiary => {});
   }
 
@@ -49,7 +51,8 @@ export class RateMyPainPage {
           id: snap.key,
           log: snap.val().log,
           painlevel: snap.val().painlevel,
-          time: snap.val().time
+          time: snap.val().time,
+          date: snap.val().date
         });
         return false;
       });
@@ -60,7 +63,8 @@ export class RateMyPainPage {
       diaryLogSnapshot.forEach(snap => {
         this.diaryLog.push({
           id: snap.key,
-          diary: snap.val().diary
+          diary: snap.val().diary,
+          date: snap.val().date
         });
         return false;
       });

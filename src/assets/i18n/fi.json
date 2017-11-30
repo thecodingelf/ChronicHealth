@@ -11,15 +11,15 @@
 
     "CLICK_EDIT": "Muokkaa",
 
-    "HOLDER_EMAIL": "Sähköposti osoite",
-    "HOLDER_PASSWORD": "******",
+    "PLACEHOLDER_EMAIL": "Sähköposti osoite",
+    "PLACEHOLDER_PASSWORD": "******",
 
     "REQUIREMENTS_EMAIL": "Anna oikea sähköposti osoite",
     "REQUIREMENTS_PASSWORD": "Salasanan tulee olla vähintään 6 kirjainta",
   
     "LOGIN_BUTTON": "Kirjaudu Sisään",
     "SIGNUP_BUTTON": "Rekisteröidy",
-    "FORGOT_BUTTON": "Unohtuiko Salasana ?",
+    "FORGOT_BUTTON": "Unohtuiko Salasana?",
     "CREATE_ACCOUNT": "Luo Tili",
     "RESET_BUTTON": "Uusi Salasana",
 
@@ -31,15 +31,21 @@
 
     "ACTIVITIES": "Aktiviteetit",
 
+    "DATE": "Päivämäärä",
+
     "TIME": "Kello",
 
     "LEVELOFPAIN": "Kivun Taso",
 
     "LEVELOFPAIN_PLACEHOLDER": "Kivun Taso",
 
+    "DATE_PICK": "Päivämäärä",
+
     "TIME_PICK": "Kellonaika",
 
     "ADD_LOG": "Lisää Loki",
+
+    "CREATE_LOG": "Luo Loki",
 
     "PLACEHOLDER_DIARY": "Kirjoita tähän...",
 
@@ -49,6 +55,12 @@
 
     "PLACEHOLDER_LIVESTREAM": "Tulossa pian",
 
-    "PLACEHOLDER_CHAT": "Kirjoita tähän..."
+    "PLACEHOLDER_CHAT": "Kirjoita tähän...",
+
+    "SELECT_LANGUAGE": "Valitse Kieli",
+
+    "FINNISH": "Suomi",
+
+    "ENGLISH": "Englanti"
 
   }

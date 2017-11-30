@@ -16,9 +16,10 @@ export class DiaryProvider {
     });
   }
 
-  createDiary(diaryEntry: string): firebase.database.ThenableReference {
+  createDiary(diaryEntry: string, dateEntry: string): firebase.database.ThenableReference {
     return this.diaryLogRef.push({
-      diary: diaryEntry
+      diary: diaryEntry,
+      date: dateEntry
     });
   }
 

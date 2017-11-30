@@ -18,6 +18,7 @@
   <ion-item>
     <ion-label>{{ 'LEVELOFPAIN' | translate }}</ion-label>
     <ion-select [(ngModel)]="logPainLevel" multiple="false" required placeholder="{{ 'LEVELOFPAIN_PLACEHOLDER' | translate }} ?">
+      <ion-option value="0">0</ion-option>
       <ion-option value="1">1</ion-option>
       <ion-option value="2">2</ion-option>
       <ion-option value="3">3</ion-option>
@@ -30,12 +31,17 @@
       <ion-option value="10">10</ion-option>
     </ion-select>
   </ion-item>
+  
+  <ion-item>
+    <ion-label>{{ 'DATE_PICK' | translate }}</ion-label>
+    <ion-datetime displayFormat="YYYY/DD/MM" [(ngModel)]="logDate"></ion-datetime>
+  </ion-item>
 
   <ion-item>
     <ion-label>{{ 'TIME_PICK' | translate }}</ion-label>
     <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="logTime"></ion-datetime>
   </ion-item>
 
-  <button ion-button block (click)="createLog(logActivity, logPainLevel, logTime)">{{ 'ADD_LOG' | translate }}</button>
+  <button ion-button block (click)="createLog(logActivity, logPainLevel, logTime, logDate)">{{ 'ADD_LOG' | translate }}</button>
 
 </ion-content>

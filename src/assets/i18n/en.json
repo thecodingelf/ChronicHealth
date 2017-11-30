@@ -1,0 +1,64 @@
+{
+    "BACK_BUTTON_TEXT": "Back",
+  
+    "ACCOUNT_INFORMATION": "Account Information",
+    "COUNTRY": "Country",
+    "EMAIL": "Email",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "LOGIN": "Log In",
+    "SIGNUP": "Register",
+
+    "CLICK_EDIT": "Click To Edit",
+
+    "PLACEHOLDER_EMAIL": "Email address",
+    "PLACEHOLDER_PASSWORD": "******",
+
+    "REQUIREMENTS_EMAIL": "Give an valid email address",
+    "REQUIREMENTS_PASSWORD": "Password must be 6 characters long",
+  
+    "LOGIN_BUTTON": "Log In",
+    "SIGNUP_BUTTON": "Register",
+    "FORGOT_BUTTON": "Forgot Password ?",
+    "CREATE_ACCOUNT": "Create Account",
+    "RESET_BUTTON": "Reset Password",
+
+    "SEND_BUTTON": "Send",
+
+    "RATEYOURPAIN_BUTTON": "Rate Your Pain",
+
+    "DIARY": "Diary",
+
+    "ACTIVITIES": "Activities",
+
+    "DATE": "Date",
+
+    "TIME": "Time",
+
+    "LEVELOFPAIN": "Level Of Pain",
+
+    "LEVELOFPAIN_PLACEHOLDER": "Level Of Pain",
+
+    "DATE_PICK": "Date",
+
+    "TIME_PICK": "Time",
+
+    "ADD_LOG": "Add Log",
+
+    "PLACEHOLDER_DIARY": "Type here...",
+
+    "ACTIVITY_NAME": "Name Of The Activity",
+
+    "ACTIVITY_PLACEHOLDER": "Activity",
+
+    "PLACEHOLDER_LIVESTREAM": "Coming Soon",
+
+    "PLACEHOLDER_CHAT": "Type here...",
+
+    "SELECT_LANGUAGE": "Language",
+
+    "FINNISH": "Finnish",
+    
+    "ENGLISH": "English"
+
+  }

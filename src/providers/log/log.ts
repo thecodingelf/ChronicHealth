@@ -16,11 +16,12 @@ export class LogProvider {
     });
   }
 
-  createLog(logActivity: string, logPainLevel: number, logTime: string): firebase.database.ThenableReference {
+  createLog(logActivity: string, logPainLevel: number, logTime: string, logDate: string = new Date().toISOString()): firebase.database.ThenableReference {
     return this.logListRef.push({
       log: logActivity,
       painlevel: logPainLevel,
-      time: logTime
+      time: logTime,
+      date: logDate
     });
   }
 
