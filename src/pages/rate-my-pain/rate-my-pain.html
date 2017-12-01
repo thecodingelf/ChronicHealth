@@ -70,7 +70,7 @@
 
     <ion-footer class="footer-add-button">
 
-      <button ion-button icon-right full color="primary" (click)="goToAddLog()"> {{ 'CREATE_LOG' | translate }}
+      <button class="create-log-button" ion-button icon-right full color="primary" (click)="goToAddLog()"> {{ 'CREATE_LOG' | translate }}
         <ion-icon name="add"></ion-icon>
       </button>
 
@@ -82,15 +82,15 @@
 
     <ion-footer class="footer-bg">
 
-     <ion-item>
-      <ion-input type="text" placeholder="{{ 'PLACEHOLDER_DIARY' | translate }}" [(ngModel)]="diaryEntry" required></ion-input>
+      <ion-item>
+      <ion-input type="text" placeholder="{{ 'PLACEHOLDER_DIARY' | translate }}" [(ngModel)]="diaryEntry" clearInput></ion-input>
       <button ion-button clear (click)="picker.open()">
         <ion-datetime #picker pickerFormat="DD/MM" [(ngModel)]="dateEntry"></ion-datetime>
         <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
       </button>
       <button ion-button clear item-right (click)="createDiary(diaryEntry, dateEntry)">{{ 'SEND_BUTTON' | translate }}</button>
-      </ion-item>
-
+    </ion-item>
+    
     </ion-footer>
 
   </div>

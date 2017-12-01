@@ -18,7 +18,7 @@ export class RateMyPainPage {
 
   logs: string = "logyourpain";
 
-  date: any = new Date();
+  date: any = Date();
 
   public diaryLog: Array<any>;
 
@@ -27,7 +27,7 @@ export class RateMyPainPage {
   constructor(private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public diaryProvider: DiaryProvider, public translateService: TranslateService, public alertCtrl: AlertController) {
   }
 
-  createDiary(diaryEntry: string = '', dateEntry: any = this.date): void {
+  createDiary(diaryEntry: string = '', dateEntry: any = new Date()): void {
     this.diaryProvider
       .createDiary(diaryEntry, dateEntry)
       .then(newDiary => {});

@@ -25,7 +25,11 @@ page-rate-my-pain {
 
     .diary-entry {
         border-bottom: 0.01em solid #333;
-    } 
+    }
+
+    .create-log-button {
+        height: 3.4em;
+    }
 
     .footer-bg {
         background-color: "#488aff";
@@ -33,6 +37,10 @@ page-rate-my-pain {
 
     .footer-add-button {
         bottom: -4px;
+    }
+
+    .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+        background-image: none !important;
     }
 
 } 
