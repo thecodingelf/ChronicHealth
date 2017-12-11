@@ -1,5 +1,9 @@
 page-rate-my-pain {
 
+    .segment-element {
+        margin-top: 3em;
+    }
+
     .badgeColor {
         background-color: #f53d3d;
     }
@@ -10,8 +14,21 @@ page-rate-my-pain {
         margin-bottom: 0.1em;
     }
 
+    .ion-md-open:before {
+        margin-left: 3em;
+    }
+
+    .ion-ios-open:before {
+        margin-left: 3em;
+    }
+
     .add-fab {
         bottom: -0.4em;
+    }
+
+    .diary-date {
+        padding-left: 0em;
+        margin-top: -1em;
     }
 
     .diary-text {

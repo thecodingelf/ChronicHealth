@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Chronic Health
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding *ngIf="logList != 0">
+
+  <ion-card>
+
+    <ion-item class="log-item" no-lines>
+      <h2>{{log?.log}}</h2>
+      <p>{{ 'DATE' | translate }}: {{log?.date}}</p>
+      <p>{{ 'TIME' | translate }}: {{log?.time}}</p>
+    </ion-item>
+
+    <ion-card-content>
+      <p>{{ 'PAIN_BEFORE' | translate }}:
+        <ion-badge [ngClass]="{ badgeColor: log?.painlevelbefore >= 8 }" [color]="log?.painlevelbefore <= 4 ? 'secondary' : 'medium'">
+          {{log?.painlevelbefore}}</ion-badge>
+      </p>
+      <p>{{ 'PAIN_AFTER' | translate }}:
+        <ion-badge [ngClass]="{ badgeColor: log?.painlevelafter >= 8 }" [color]="log?.painlevelafter <= 4 ? 'secondary' : 'medium'">
+          {{log?.painlevelafter}}</ion-badge>
+      </p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button clear>{{ 'BEFORE' | translate }}</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear>{{ 'AFTER' | translate }}</button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+</ion-content>

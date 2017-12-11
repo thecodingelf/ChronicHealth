@@ -1,5 +1,10 @@
 {
     "BACK_BUTTON_TEXT": "Takaisin",
+
+    "LOG_OUT": "Kirjaudu ulos",
+
+    "MENU": "Valikko",
+    "PROFILE": "Profiili",
   
     "ACCOUNT_INFORMATION": "Tilin Tiedot",
     "COUNTRY": "Maa",
@@ -11,7 +16,7 @@
 
     "CLICK_EDIT": "Muokkaa",
 
-    "PLACEHOLDER_EMAIL": "Sähköposti osoite",
+    "PLACEHOLDER_EMAIL": "Sähköpostiosoite",
     "PLACEHOLDER_PASSWORD": "******",
 
     "REQUIREMENTS_EMAIL": "Anna oikea sähköposti osoite",
@@ -23,6 +28,8 @@
     "CREATE_ACCOUNT": "Luo Tili",
     "RESET_BUTTON": "Uusi Salasana",
 
+    "EDIT": "Muokkaa",
+
     "SEND_BUTTON": "Lähetä",
 
     "RATEYOURPAIN_BUTTON": "Kipu Loki",
@@ -31,13 +38,27 @@
 
     "ACTIVITIES": "Aktiviteetit",
 
+    "ACTIVITY": "Aktiviteetti",
+
     "DATE": "Päivämäärä",
 
     "TIME": "Kello",
 
     "LEVELOFPAIN": "Kivun Taso",
 
+    "PAIN_BEFORE": "Kipu ennen",
+
+    "BEFORE": "Ennen",
+
+    "AFTER": "Jälkeen",
+
+    "PAIN_AFTER": "Kipu jälkeen",
+
     "LEVELOFPAIN_PLACEHOLDER": "Kivun Taso",
+
+    "DATE_TIME": "Päivämäärä & Aika",
+
+    "PAINLENGHT": "Kivunkesto",
 
     "DATE_PICK": "Päivämäärä",
 

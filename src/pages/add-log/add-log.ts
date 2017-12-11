@@ -12,9 +12,9 @@ export class AddLogPage {
 
   constructor(public navCtrl: NavController, public logProvider: LogProvider, public translateService: TranslateService) { }
 
-  createLog(logActivity: string, logPainLevel: number, logTime: string, logDate: string): void {
+  createLog(logActivity: string, logPainLevelBefore: number, logPainLevelAfter: number, logTime: string, logDate: string): void {
     this.logProvider
-      .createLog(logActivity, logPainLevel, logTime, logDate)
+      .createLog(logActivity, logPainLevelBefore, logPainLevelAfter, logTime, logDate)
       .then(newLog => {
         this.navCtrl.pop();
       });

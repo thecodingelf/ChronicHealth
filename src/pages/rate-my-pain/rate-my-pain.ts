@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController, PopoverController, ModalController } from 'ionic-angular';
 // Providers.
 import { AuthProvider } from '../../providers/auth/auth';
 import { LogProvider } from '../../providers/log/log';
@@ -8,13 +8,16 @@ import { DiaryProvider } from '../../providers/diary/diary';
 import { ToastService } from "../../services/toast/toast.service";
 import { TranslateService } from '@ngx-translate/core';
 
-
 @IonicPage()
 @Component({
   selector: 'page-rate-my-pain',
   templateUrl: 'rate-my-pain.html',
 })
+
 export class RateMyPainPage {
+
+  @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
+  @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
 
   logs: string = "logyourpain";
 
@@ -22,15 +25,34 @@ export class RateMyPainPage {
 
   public diaryLog: Array<any>;
 
-  public logList: Array<any>;
+  public logList: Array<any>; 
 
-  constructor(private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public diaryProvider: DiaryProvider, public translateService: TranslateService, public alertCtrl: AlertController) {
+  constructor(private popoverCtrl: PopoverController, private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public diaryProvider: DiaryProvider, public translateService: TranslateService, public alertCtrl: AlertController, public modalCtrl: ModalController) { }
+
+  presentPopover(ev) {
+
+    let popover = this.popoverCtrl.create('PopoverPage', {
+      contentEle: this.content.nativeElement,
+      textEle: this.text.nativeElement
+    });
+
+    popover.present({
+      ev: ev
+    });
   }
+
+  openModal(): void {
+    this.navCtrl.push('ModalPage');
+  }
+
+/*   openModal(id) {
+    this.navCtrl.push(SubHomePage, { id: id });
+} */
 
   createDiary(diaryEntry: string = '', dateEntry: any = new Date()): void {
     this.diaryProvider
       .createDiary(diaryEntry, dateEntry)
-      .then(newDiary => {});
+      .then(newDiary => { });
   }
 
   goToAddLog(): void {
@@ -50,7 +72,8 @@ export class RateMyPainPage {
         this.logList.push({
           id: snap.key,
           log: snap.val().log,
-          painlevel: snap.val().painlevel,
+          painlevelbefore: snap.val().painlevelbefore,
+          painlevelafter: snap.val().painlevelafter,
           time: snap.val().time,
           date: snap.val().date
         });
