@@ -21,20 +21,7 @@ export class ModalPage {
   constructor(private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public translateService: TranslateService) {}
 
   ionViewDidLoad() {
-    this.logProvider.getLogList().on("value", logListSnapshot => {
-      this.logList = [];
-      logListSnapshot.forEach(snap => {
-        this.logList.push({
-          id: snap.key,
-          log: snap.val().log,
-          painlevelbefore: snap.val().painlevelbefore,
-          painlevelafter: snap.val().painlevelafter,
-          time: snap.val().time,
-          date: snap.val().date
-        });
-        return false;
-      });
-    });
+
   }
 
 }

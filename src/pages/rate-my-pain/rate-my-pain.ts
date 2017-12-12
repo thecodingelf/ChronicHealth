@@ -25,7 +25,7 @@ export class RateMyPainPage {
 
   public diaryLog: Array<any>;
 
-  public logList: Array<any>; 
+  public logList: Array<any>;
 
   constructor(private popoverCtrl: PopoverController, private toast: ToastService, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public diaryProvider: DiaryProvider, public translateService: TranslateService, public alertCtrl: AlertController, public modalCtrl: ModalController) { }
 
@@ -41,13 +41,13 @@ export class RateMyPainPage {
     });
   }
 
-  openModal(): void {
-    this.navCtrl.push('ModalPage');
+  openModal(id): void {
+    this.navCtrl.push('ModalPage', { id });
   }
 
-/*   openModal(id) {
-    this.navCtrl.push(SubHomePage, { id: id });
-} */
+  /*   openModal(id) {
+      this.navCtrl.push(SubHomePage, { id: id });
+  } */
 
   createDiary(diaryEntry: string = '', dateEntry: any = new Date()): void {
     this.diaryProvider
