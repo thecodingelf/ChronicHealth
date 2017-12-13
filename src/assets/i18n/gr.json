@@ -1,0 +1,73 @@
+{
+  "BACK_BUTTON_TEXT": "Πίσω", 
+  
+    "ACCOUNT_INFORMATION": "Πληροφορίες Λογαριασμού", 
+    "COUNTRY": "Χώρα ", 
+    "EMAIL": "Ηλεκτρονική Διεύθυνση", 
+    "USERNAME": "Όνομα Χρήστη", 
+    "PASSWORD": "Κωδικός", 
+    "LOGIN": "Σύνδεση", 
+    "SIGNUP": "Εγγραφή", 
+
+    "CLICK_EDIT": "Κλικ για επεξεργασία", 
+
+    "PLACEHOLDER_EMAIL": "Ηλεκτρονική Διεύθυνση", 
+    "PLACEHOLDER_PASSWORD": "******", 
+
+    "REQUIREMENTS_EMAIL": "Δώσε έγκυρη ηλεκτρονική διεύθυνση", 
+    "REQUIREMENTS_PASSWORD": "Ο κωδικός πρέπει να περιέχει τουλάχιστον 6 χαρακτήρες",
+
+    "LOGIN_BUTTON": "Σύνδεση",
+    "SIGNUP_BUTTON": "Εγγραφή",
+    "FORGOT_BUTTON": "Ξέχασες τον κωδικό;",
+    "CREATE_ACCOUNT": "Δημιουργία Λογαριασμού",
+    "RESET_BUTTON": "Επαναφορά κωδικού",
+
+    "SEND_BUTTON": "Αποστολή",
+
+    "RATEYOURPAIN_BUTTON": "Βαθμολόγησε τον πόνο σου",
+
+    "DIARY": "Ημερολόγιο",
+
+    "ACTIVITIES": "Δραστηριότητες",
+
+    "DATE": "Ημερομηνία",
+
+    "TIME": "Ώρα",
+
+    "LEVELOFPAIN": "Επίπεδο του πόνου",
+
+    "LEVELOFPAIN_PLACEHOLDER": "Επίπεδο του πόνου",
+
+    "DATE_PICK": "Ημερομηνία",
+
+    "TIME_PICK": "Ώρα",
+
+    "ADD_LOG": "Προσθήκη αρχείου",
+
+    "PLACEHOLDER_DIARY": "Πληκτρολόγησε εδώ...",
+
+    "ACTIVITY_NAME": "Είδος Δραστηριότητας",
+
+    "ACTIVITY_PLACEHOLDER": "Δραστηριότητα",
+
+    "PLACEHOLDER_LIVESTREAM": "Σύντομα κοντά σας",
+
+    "PLACEHOLDER_CHAT": "Πληκτρολόγησε εδώ...",
+
+    "SELECT_LANGUAGE": "Γλώσσα",
+
+    "FINNISH": "Φινλανδικά",
+    
+    "ENGLISH": "Αγγλικά",
+     
+     "NEPALISE": "Νεπαλέζικα",
+
+     "PORTUGESE": "Πορτογαλικά",
+
+     "GREECE": "Ελληνικά",
+
+     "POLISH": "Πολωνικά"
+
+
+  }

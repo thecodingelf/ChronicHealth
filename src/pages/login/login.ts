@@ -13,10 +13,10 @@ import firebase from 'firebase';
 })
 export class LoginPage {
 
-  langs = ['en', 'fi'];
+  langs = ['en', 'fi', 'np'];
 
   public logoRef: any;
-  public logo: any; 
+  public logo: any;
 
   public loginForm: FormGroup;
   public loading: Loading;
@@ -24,11 +24,11 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public authProvider: AuthProvider, formBuilder: FormBuilder, public translate: TranslateService) {
 
     this.logoRef = firebase.storage().ref().child('img/');
-    
-          this.logoRef.child('ch.png').getDownloadURL().then((url) => {
-            this.logo = url; 
-    
-      }); 
+
+    this.logoRef.child('ch.png').getDownloadURL().then((url) => {
+      this.logo = url;
+
+    });
 
     this.loginForm = formBuilder.group({
       email: [
@@ -43,13 +43,29 @@ export class LoginPage {
 
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 
-      if(event.lang == 'fi') {
+      if (event.lang == 'fi') {
         this.translate.setDefaultLang('fi');
       }
 
-      else {
+      else if (event.lang == 'en') {
         this.translate.setDefaultLang('en');
       }
+
+      else if (event.lang == 'np') {
+        this.translate.setDefaultLang('np');
+      }
+
+      else if (event.lang == 'gr') {
+        this.translate.setDefaultLang('gr');
+      }
+
+      else if (event.lang == 'po') {
+        this.translate.setDefaultLang('po');
+      }
+
+      else if (event.lang == 'pl') {
+        this.translate.setDefaultLang('pl');
+      }      
 
       console.log('Language changed ' + this.translate.currentLang);
     });
@@ -91,7 +107,7 @@ export class LoginPage {
 
   goToRegister(): void {
     this.navCtrl.push('SignupPage');
-  } 
+  }
   goToResetPassword(): void {
     this.navCtrl.push('ResetPasswordPage');
   }

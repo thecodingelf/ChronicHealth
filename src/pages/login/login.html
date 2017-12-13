@@ -1,7 +1,7 @@
 <ion-content padding>
 
   <ion-item no-lines>
-    <img class="img-responsive" src="{{logo}}" /> 
+    <img class="img-responsive" src="{{logo}}" />
   </ion-item>
 
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
@@ -38,10 +38,14 @@
 <ion-footer>
   <button ion-button clear (click)="changeLanguage('fi')">Fi</button>
   <button ion-button clear (click)="changeLanguage('en')">En</button>
-<!-- <ion-item>
+  <button ion-button clear (click)="changeLanguage('np')">Np</button>
+  <button ion-button clear (click)="changeLanguage('gr')">Gr</button>
+  <button ion-button clear (click)="changeLanguage('po')">Po</button>
+  <button ion-button clear (click)="changeLanguage('pl')">Pl</button>
+  <!-- <ion-item>
     <ion-label>{{ 'SELECT_LANGUAGE' | translate }}:</ion-label>
     <ion-select #langSelect (change)="translate.use(langSelect.value)">
-      <ion-option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</ion-option>
+      <ion-option *ngFor="let lang of langs" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</ion-option>
     </ion-select>
   </ion-item> -->
 </ion-footer>

@@ -1,0 +1,72 @@
+{
+    "BACK_BUTTON_TEXT": "Voltar",
+  
+    "ACCOUNT_INFORMATION": "Informa��o da conta", 
+    "COUNTRY": "Pa�s",
+    "EMAIL": "E-mail",
+    "USERNAME": "Nome de usu�rio",
+    "PASSWORD": "Password",
+    "LOGIN": "Entrar",
+    "SIGNUP": "Registar",
+
+    "CLICK_EDIT": "Clique para editar",
+
+    "PLACEHOLDER_EMAIL": "Endereco de e-mail",
+    "PLACEHOLDER_PASSWORD": "******",
+
+    "REQUIREMENTS_EMAIL": "Introduza um endere�o de e-mail v�lido",
+    "REQUIREMENTS_PASSWORD": "Password deve conter 6 caracteres",
+  
+    "LOGIN_BUTTON": "Entrar",
+    "SIGNUP_BUTTON": "Registar",
+    "FORGOT_BUTTON": "Esqueceu a Password?",
+    "CREATE_ACCOUNT": "Criar conta",
+    "RESET_BUTTON": "Redefinir Password",
+
+    "SEND_BUTTON": "Enviar",
+
+    "RATEYOURPAIN_BUTTON": "Classifique a sua Dor",
+
+    "DIARY": "Di�rio",
+
+    "ACTIVITIES": "Atividades",
+
+    "DATE": "Data",
+
+    "TIME": "Hora",
+
+    "LEVELOFPAIN": "N�vel de dor",
+
+    "LEVELOFPAIN_PLACEHOLDER": "N�vel de dor",
+
+    "DATE_PICK": "Data",
+
+    "TIME_PICK": "Hora",
+
+    "ADD_LOG": "Adicionar",
+
+    "PLACEHOLDER_DIARY": "Escreva aqui...",
+
+    "ACTIVITY_NAME": "Nome da Atividade",
+
+    "ACTIVITY_PLACEHOLDER": "Atividade",
+
+    "PLACEHOLDER_LIVESTREAM": "Em breve",
+
+    "PLACEHOLDER_CHAT": "Escrever aqui...",
+
+    "SELECT_LANGUAGE": "Idioma",
+
+    "FINNISH": "Finland�s",
+    
+    "ENGLISH": "Ingl�s",
+     
+     "NEPALISE": "Nepal�s",
+
+     "PORTUGESE": "Portugu�s",
+
+     "GREECE": "Grego",
+
+     "POLISH": "Polaco"
+
+  }
