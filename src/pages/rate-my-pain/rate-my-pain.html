@@ -45,7 +45,7 @@
 
       <h2>{{ 'ACTIVITIES' | translate }}:</h2>
 
-      <ion-card *ngFor="let log of logList">
+<!--       <ion-card *ngFor="let log of logList">
 
         <ion-item class="log-item" no-lines>
           <h2>{{log?.log}}</h2>
@@ -73,7 +73,7 @@
           </ion-col>
         </ion-row>
 
-      </ion-card>
+      </ion-card> -->
 
       <ion-card *ngFor="let log of logList">
         <ion-list>
@@ -84,7 +84,7 @@
               </ion-col>
               <ion-col></ion-col>
               <ion-col end>
-                    <ion-icon ios="ios-open" md="md-open" (click)="openModal()"></ion-icon>
+                    <ion-icon ios="ios-open" md="md-open" (click)="openModal(log.id)"></ion-icon>
               </ion-col>
             </ion-row>
           </ion-item>

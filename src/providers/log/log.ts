@@ -30,4 +30,8 @@ export class LogProvider {
     return this.logListRef;
   }
 
+  getLogDetail(logId: string): firebase.database.Reference {
+    return this.logListRef.child(logId);
+  }
+
 }

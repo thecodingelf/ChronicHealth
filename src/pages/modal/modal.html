@@ -6,24 +6,24 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding *ngIf="logList != 0">
+<ion-content padding>
 
   <ion-card>
 
     <ion-item class="log-item" no-lines>
-      <h2>{{log?.log}}</h2>
-      <p>{{ 'DATE' | translate }}: {{log?.date}}</p>
-      <p>{{ 'TIME' | translate }}: {{log?.time}}</p>
+      <h2>{{currentLog?.log}}</h2>
+      <p>{{ 'DATE' | translate }}: {{currentLog?.date}}</p>
+      <p>{{ 'TIME' | translate }}: {{currentLog?.time}}</p>
     </ion-item>
 
     <ion-card-content>
       <p>{{ 'PAIN_BEFORE' | translate }}:
-        <ion-badge [ngClass]="{ badgeColor: log?.painlevelbefore >= 8 }" [color]="log?.painlevelbefore <= 4 ? 'secondary' : 'medium'">
-          {{log?.painlevelbefore}}</ion-badge>
+        <ion-badge [ngClass]="{ badgeColor: currentLog?.painlevelbefore >= 8 }" [color]="currentLog?.painlevelbefore <= 4 ? 'secondary' : 'medium'">
+          {{currentLog?.painlevelbefore}}</ion-badge>
       </p>
       <p>{{ 'PAIN_AFTER' | translate }}:
-        <ion-badge [ngClass]="{ badgeColor: log?.painlevelafter >= 8 }" [color]="log?.painlevelafter <= 4 ? 'secondary' : 'medium'">
-          {{log?.painlevelafter}}</ion-badge>
+        <ion-badge [ngClass]="{ badgeColor: currentLog?.painlevelafter >= 8 }" [color]="currentLog?.painlevelafter <= 4 ? 'secondary' : 'medium'">
+          {{currentLog?.painlevelafter}}</ion-badge>
       </p>
     </ion-card-content>
 

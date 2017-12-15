@@ -41,13 +41,9 @@ export class RateMyPainPage {
     });
   }
 
-  openModal(id): void {
-    this.navCtrl.push('ModalPage', { id });
+  openModal(logId): void {
+    this.navCtrl.push('ModalPage', { logId: logId });
   }
-
-  /*   openModal(id) {
-      this.navCtrl.push(SubHomePage, { id: id });
-  } */
 
   createDiary(diaryEntry: string = '', dateEntry: any = new Date()): void {
     this.diaryProvider
@@ -58,6 +54,10 @@ export class RateMyPainPage {
   goToAddLog(): void {
     this.navCtrl.push('AddLogPage');
   }
+
+/*   removeItem(itemId: any): void {
+    this.logListRef.remove(itemId);
+  } */
 
   logOut(): void {
     this.authProvider.logoutUser().then(() => {
