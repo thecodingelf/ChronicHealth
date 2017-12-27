@@ -1,4 +1,3 @@
-import { DateFormatPipe } from './../../date_time/date';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, PopoverController, ModalController } from 'ionic-angular';
 // Providers.
