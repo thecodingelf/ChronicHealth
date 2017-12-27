@@ -15,10 +15,13 @@
   </ion-content>
 
   <ion-footer>
-        <button menuClose ion-item ico-right (click)="logOut()">
-            {{ 'LOG_OUT' | translate }}
-            <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
-          </button>
+    <button menuClose ion-item (click)="termConditions()">
+      {{ 'TERMS' | translate }}
+    </button>
+    <button menuClose ion-item icon-right (click)="logOut()">
+      {{ 'LOG_OUT' | translate }}
+      <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+    </button>
   </ion-footer>
 
 </ion-menu>

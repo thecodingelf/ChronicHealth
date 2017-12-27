@@ -16,6 +16,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ModalPage {
 
+  content: string = "painbefore";
+
   public currentLog: any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public translateService: TranslateService) {}

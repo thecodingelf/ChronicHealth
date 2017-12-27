@@ -1,3 +1,4 @@
+import { DateFormatPipe } from './../../date_time/date';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, PopoverController, ModalController } from 'ionic-angular';
 // Providers.
@@ -45,7 +46,7 @@ export class RateMyPainPage {
     this.navCtrl.push('ModalPage', { logId: logId });
   }
 
-  createDiary(diaryEntry: string = '', dateEntry: any = new Date()): void {
+  createDiary(diaryEntry: string = '', dateEntry: string): void {
     this.diaryProvider
       .createDiary(diaryEntry, dateEntry)
       .then(newDiary => { });

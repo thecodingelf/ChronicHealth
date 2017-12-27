@@ -21,6 +21,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage: string;
 
+  terms = "{{ 'TERMS' | translate}}";
+
   pages: Array<{ title: string, component: any }>;
 
   constructor(private toast: ToastService, private translate: TranslateService, private config: Config, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public authProvider: AuthProvider) {
@@ -66,6 +68,10 @@ export class MyApp {
     this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
       this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
     });
+  }
+
+  termConditions(): void {
+    this.nav.push('TermsConditionsPage')
   }
 
   logOut(): void {

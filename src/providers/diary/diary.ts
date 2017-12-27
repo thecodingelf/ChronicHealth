@@ -16,10 +16,10 @@ export class DiaryProvider {
     });
   }
 
-  createDiary(diaryEntry: string, dateEntry: any = new Date().toISOString()): firebase.database.ThenableReference {
+  createDiary(diaryEntry: string, dateEntry: string): firebase.database.ThenableReference {
     return this.diaryLogRef.push({
       diary: diaryEntry,
-      date: dateEntry
+      date: firebase.database.ServerValue.TIMESTAMP
     });
   }
 

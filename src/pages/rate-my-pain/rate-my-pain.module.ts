@@ -6,7 +6,7 @@ import { RateMyPainPage } from './rate-my-pain';
 
 @NgModule({
   declarations: [
-    RateMyPainPage, 
+    RateMyPainPage,
   ],
   imports: [
     IonicPageModule.forChild(RateMyPainPage),

@@ -24,6 +24,7 @@ tmp/
 temp/
 hooks/
 platforms/
+src/pages/terms-conditions
 plugins/
 plugins/android.json
 plugins/ios.json
