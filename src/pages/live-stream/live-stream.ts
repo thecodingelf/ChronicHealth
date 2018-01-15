@@ -20,10 +20,12 @@ export class LiveStreamPage {
 
   constructor(private toast: ToastService, public navCtrl: NavController, public alert: AlertController, public authProvider: AuthProvider, public translateService: TranslateService) {
 
+    // Reference to database where messages are being stored.
     this.ref = firebase.database().ref('messages');
 
   }
 
+  // Sends the chat message.
   sendMessage(): void {
     this.ref.push({
       name: this.name.chatname,
@@ -31,14 +33,9 @@ export class LiveStreamPage {
     });
   } 
 
-  logOut(): void {
-    this.authProvider.logoutUser().then(() => {
-      this.navCtrl.setRoot('LoginPage').then(() => this.toast.show(`Succesfully Logout`));
-    });
-  }
-
   ionViewDidLoad() {
 
+    // Creates the chat name. | Needs better functionality.
     this.alert.create({
       title: 'Chat',
       inputs: [{
@@ -53,6 +50,7 @@ export class LiveStreamPage {
       }]
     }).present();
 
+    // Loads the chat messages from database.
     this.ref.on('value', data => {
       let tmp = [];
       data.forEach( data => {

@@ -4,8 +4,10 @@ import firebase from 'firebase';
 @Injectable()
 export class DiaryProvider {
 
+  // Reference to diarylist in database.
   public diaryLogRef: firebase.database.Reference;
 
+  // Added diary entries from user goes here.
   constructor() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -16,6 +18,7 @@ export class DiaryProvider {
     });
   }
 
+  // Creates diary entry.
   createDiary(diaryEntry: string, dateEntry: string): firebase.database.ThenableReference {
     return this.diaryLogRef.push({
       diary: diaryEntry,
@@ -23,6 +26,7 @@ export class DiaryProvider {
     });
   }
 
+  // Gets the diary entries from reffered list.
   getDiary(): firebase.database.Reference {
     return this.diaryLogRef;
   }

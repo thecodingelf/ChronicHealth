@@ -27,8 +27,8 @@
 
     <ion-item class="log-item" no-lines>
       <h2>{{currentLog?.log}}</h2>
-      <p>{{ 'DATE' | translate }}: {{currentLog?.date}}</p>
-      <p>{{ 'TIME' | translate }}: {{currentLog?.time}}</p>
+      <p>{{ 'DATE' | translate }}: {{currentLog?.date | date: 'dd/MM/yyyy'}}</p>
+      <p>{{ 'TIME' | translate }}: {{currentLog?.time | date: 'HH:mm'}}</p>
     </ion-item>
 
     <ion-card-content>
@@ -48,8 +48,8 @@
 
         <ion-item class="log-item" no-lines>
           <h2>{{currentLog?.log}}</h2>
-          <p>{{ 'DATE' | translate }}: {{currentLog?.date}}</p>
-          <p>{{ 'TIME' | translate }}: {{currentLog?.time}}</p>
+          <p>{{ 'DATE' | translate }}: {{currentLog?.date | date: 'dd/MM/yyyy'}}</p>
+          <p>{{ 'TIME' | translate }}: {{currentLog?.time | date: 'HH:mm'}}</p>
         </ion-item>
     
         <ion-card-content>

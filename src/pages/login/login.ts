@@ -41,7 +41,13 @@ export class LoginPage {
       ]
     });
 
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+    translate.addLangs(["fi", "en"]);
+    translate.setDefaultLang('fi');
+
+    let browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/fi|en/) ? browserLang : 'fi');
+
+/*     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 
       if (event.lang == 'fi') {
         this.translate.setDefaultLang('fi');
@@ -65,10 +71,10 @@ export class LoginPage {
 
       else if (event.lang == 'pl') {
         this.translate.setDefaultLang('pl');
-      }      
+      }    
 
       console.log('Language changed ' + this.translate.currentLang);
-    });
+    }); */
 
   }
 

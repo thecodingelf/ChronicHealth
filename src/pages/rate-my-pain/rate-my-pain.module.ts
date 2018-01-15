@@ -10,6 +10,7 @@ import { RateMyPainPage } from './rate-my-pain';
   ],
   imports: [
     IonicPageModule.forChild(RateMyPainPage),
+    // To use translation services in other pages.
     TranslateModule.forChild()
   ],
   entryComponents: [
