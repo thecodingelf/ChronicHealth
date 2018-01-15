@@ -47,34 +47,34 @@ export class LoginPage {
     let browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/fi|en/) ? browserLang : 'fi');
 
-/*     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-
-      if (event.lang == 'fi') {
-        this.translate.setDefaultLang('fi');
-      }
-
-      else if (event.lang == 'en') {
-        this.translate.setDefaultLang('en');
-      }
-
-      else if (event.lang == 'np') {
-        this.translate.setDefaultLang('np');
-      }
-
-      else if (event.lang == 'gr') {
-        this.translate.setDefaultLang('gr');
-      }
-
-      else if (event.lang == 'po') {
-        this.translate.setDefaultLang('po');
-      }
-
-      else if (event.lang == 'pl') {
-        this.translate.setDefaultLang('pl');
-      }    
-
-      console.log('Language changed ' + this.translate.currentLang);
-    }); */
+    /*     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+    
+          if (event.lang == 'fi') {
+            this.translate.setDefaultLang('fi');
+          }
+    
+          else if (event.lang == 'en') {
+            this.translate.setDefaultLang('en');
+          }
+    
+          else if (event.lang == 'np') {
+            this.translate.setDefaultLang('np');
+          }
+    
+          else if (event.lang == 'gr') {
+            this.translate.setDefaultLang('gr');
+          }
+    
+          else if (event.lang == 'po') {
+            this.translate.setDefaultLang('po');
+          }
+    
+          else if (event.lang == 'pl') {
+            this.translate.setDefaultLang('pl');
+          }    
+    
+          console.log('Language changed ' + this.translate.currentLang);
+        }); */
 
   }
 

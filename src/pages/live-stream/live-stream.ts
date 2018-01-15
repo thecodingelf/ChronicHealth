@@ -15,7 +15,7 @@ export class LiveStreamPage {
 
   ref;
   name;
-  newmessage;
+  newmessage: string = '';
   messagesList;
 
   constructor(private toast: ToastService, public navCtrl: NavController, public alert: AlertController, public authProvider: AuthProvider, public translateService: TranslateService) {
@@ -31,6 +31,7 @@ export class LiveStreamPage {
       name: this.name.chatname,
       message: this.newmessage
     });
+    this.newmessage = '';
   } 
 
   ionViewDidLoad() {

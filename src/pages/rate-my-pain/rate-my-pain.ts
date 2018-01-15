@@ -26,6 +26,8 @@ export class RateMyPainPage {
 
   date: any = Date();
 
+  diaryEntry: string = '';
+
   // Array of the diary entries.
   public diaryLog: Array<any>;
 
@@ -56,7 +58,9 @@ export class RateMyPainPage {
   createDiary(diaryEntry: string = '', dateEntry: string): void {
     this.diaryProvider
       .createDiary(diaryEntry, dateEntry)
-      .then(newDiary => { });
+      .then(newDiary => { 
+       });
+       this.diaryEntry = '';
   }
 
   // Opens a new page for writing the log entry.
