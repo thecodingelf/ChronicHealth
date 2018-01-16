@@ -13,7 +13,7 @@ import firebase from 'firebase';
 })
 export class LoginPage {
 
-  langs = ['en', 'fi', 'np'];
+  langs = ['en', 'fi', 'po', 'gr'];
 
   public logoRef: any;
   public logo: any;
@@ -41,7 +41,7 @@ export class LoginPage {
       ]
     });
 
-    translate.addLangs(["fi", "en"]);
+    translate.addLangs(["fi", "en", "po", "gr"]);
     translate.setDefaultLang('fi');
 
     let browserLang = translate.getBrowserLang();
