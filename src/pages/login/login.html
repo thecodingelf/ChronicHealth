@@ -6,31 +6,31 @@
 
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
     <ion-item>
-      <ion-label stacked>{{ 'EMAIL' | translate }}</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="{{ 'PLACEHOLDER_EMAIL' | translate }}" [class.invalid]="!loginForm.controls.email.valid && blur">
+      <ion-label stacked>{{ 'LOGIN.EMAIL' | translate }}</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_EMAIL' | translate }}" [class.invalid]="!loginForm.controls.email.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.dirty">
-      <p>{{ 'REQUIREMENTS_EMAIL' | translate }}.</p>
+      <p>{{ 'LOGIN.REQUIREMENTS_EMAIL' | translate }}.</p>
     </ion-item>
     <ion-item>
-      <ion-label stacked>{{ 'PASSWORD' | translate }}</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="{{ 'PLACEHOLDER_PASSWORD' | translate }}" [class.invalid]="!loginForm.controls.password.valid && blur">
+      <ion-label stacked>{{ 'LOGIN.PASSWORD' | translate }}</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_PASSWORD' | translate }}" [class.invalid]="!loginForm.controls.password.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">
-      <p>{{ 'REQUIREMENTS_PASSWORD' | translate }}.</p>
+      <p>{{ 'LOGIN.REQUIREMENTS_PASSWORD' | translate }}.</p>
     </ion-item>
     <button ion-button block type="submit" [disabled]="!loginForm.valid" icon-right>
-      {{ 'LOGIN_BUTTON' | translate }}
+      {{ 'LOGIN.LOGIN_BUTTON' | translate }}
       <ion-icon name="log-in"></ion-icon>
     </button>
   </form>
   <button ion-button block clear (click)="goToRegister()">
-    {{ 'SIGNUP_BUTTON' | translate }}
+    {{ 'LOGIN.SIGNUP_BUTTON' | translate }}
   </button>
   <button ion-button block clear (click)="goToResetPassword()">
-    {{ 'FORGOT_BUTTON' | translate }}
+    {{ 'LOGIN.FORGOT_BUTTON' | translate }}
   </button>
 
 </ion-content>
@@ -43,9 +43,20 @@
   <button ion-button clear (click)="changeLanguage('po')">Po</button>
   <button ion-button clear (click)="changeLanguage('pl')">Pl</button> -->
 <!--   <ion-item> -->
-    <ion-label>{{ 'SELECT_LANGUAGE' | translate }}:</ion-label>
-    <select #langSelect (change)="translate.use(langSelect.value)">
-      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
-    </select>
+    <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-label>{{ 'LOGIN.SELECT_LANGUAGE' | translate }}:</ion-label>
+      </ion-col>
+      <ion-col>
+        <app-language-selector [languages]="languages"></app-language-selector>
+<!--           <select #langSelect (change)="translate.use(langSelect.value)">
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+          </select> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
+
 <!--   </ion-item> -->
 </ion-footer>

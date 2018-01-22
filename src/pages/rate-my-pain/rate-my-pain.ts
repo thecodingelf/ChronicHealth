@@ -60,6 +60,7 @@ export class RateMyPainPage {
       .createDiary(diaryEntry, dateEntry)
       .then(newDiary => { 
        });
+       // Returns empty input field after submitting the diary entry.
        this.diaryEntry = '';
   }
 

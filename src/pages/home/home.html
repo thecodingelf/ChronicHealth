@@ -1,24 +1,24 @@
 <ion-header>
   <ion-navbar color="primary">
+      <ion-buttons start>
+          <!--         <button ion-button icon-only (click)="goToProfile()">
+                    <ion-icon name="person"></ion-icon>
+                  </button> -->
+                  <button ion-button menuToggle>
+                    <ion-icon name="menu"></ion-icon>
+                  </button>
+                </ion-buttons>
     <ion-title>
       Chronic Health
     </ion-title>
-    <ion-buttons end>
-<!--         <button ion-button icon-only (click)="goToProfile()">
-          <ion-icon name="person"></ion-icon>
-        </button> -->
-        <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
-      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
 
-    <button ion-button block class="button-one" (click)="showRateMyPain()">{{ 'RATEYOURPAIN_BUTTON' | translate }}</button>
+    <button ion-button block class="button-one" (click)="showRateMyPain()">{{ 'MAIN_VIEW.RATEYOURPAIN_BUTTON' | translate }}</button>
     
     <button ion-button block class="button-one" (click)="showLiveStream()">Live Stream</button>
 
-</ion-content> 
+</ion-content>

@@ -5,6 +5,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { createTranslateLoader } from '../../app/app.module';
 import { LoginPage } from './login';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -20,5 +21,6 @@ import { LoginPage } from './login';
       }
     })
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LoginPageModule {}

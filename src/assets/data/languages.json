@@ -1,0 +1,22 @@
+[
+    {
+        "id": "en",
+        "title": "English",
+        "icon": "USA.png"
+    },
+    {
+        "id": "fi",
+        "title": "Finnish",
+        "icon": "Finland.png"
+    },
+    {
+        "id": "gr",
+        "title": "Greece",
+        "icon": "Greece.png"
+    },
+    {
+        "id": "po",
+        "title": "Portugese",
+        "icon": "Portugal.png"
+    }
+]

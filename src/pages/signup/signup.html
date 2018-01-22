@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Chronic Health
+      {{ 'REGISTER.REGISTER_USER' | translate}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,27 +10,27 @@
 
   <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
     <ion-item>
-      <ion-label stacked>{{ 'EMAIL' | translate }}</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="{{ 'PLACEHOLDER_EMAIL' | translate }}" [class.invalid]="!signupForm.controls.email.valid && blur">
+      <ion-label stacked>{{ 'REGISTER.EMAIL' | translate }}</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_EMAIL' | translate }}" [class.invalid]="!signupForm.controls.email.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid
     && signupForm.controls.email.dirty">
-      <p>{{ 'REQUIREMENTS_EMAIL' | translate }}.</p>
+      <p>{{ 'REQUIREMENTS.REQUIREMENTS_EMAIL' | translate }}.</p>
     </ion-item>
 
     <ion-item> 
-      <ion-label stacked>{{ 'PASSWORD' | translate }}</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="{{ 'PLACEHOLDER_PASSWORD' | translate }}" [class.invalid]="!signupForm.controls.password.valid && blur">
+      <ion-label stacked>{{ 'REGISTER.PASSWORD' | translate }}</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_PASSWORD' | translate }}" [class.invalid]="!signupForm.controls.password.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  &&
     signupForm.controls.password.dirty">
-      <p>{{ 'REQUIREMENTS_PASSWORD' | translate }}.</p>
+      <p>{{ 'REQUIREMENTS.REQUIREMENTS_PASSWORD' | translate }}.</p>
     </ion-item>
 
     <button ion-button block type="submit" [disabled]="!signupForm.valid">
-      {{ 'CREATE_ACCOUNT' | translate }}
+      {{ 'REGISTER.CREATE_ACCOUNT' | translate }}
     </button>
   </form>
 </ion-content> 

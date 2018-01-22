@@ -31,10 +31,10 @@
   <div class="segment-element" padding>
     <ion-segment [(ngModel)]="logs">
       <ion-segment-button value="logyourpain">
-        {{ 'RATEYOURPAIN_BUTTON' | translate }}
+        {{ 'PAIN_LOG.RATEYOURPAIN_BUTTON' | translate }}
       </ion-segment-button>
       <ion-segment-button value="diary">
-        {{ 'DIARY' | translate }}
+        {{ 'USER_DIARY.DIARY' | translate }}
       </ion-segment-button>
     </ion-segment>
   </div>
@@ -43,7 +43,7 @@
 
     <div *ngSwitchCase="'logyourpain'">
 
-      <h2>{{ 'ACTIVITIES' | translate }}:</h2>
+      <h2>{{ 'PAIN_LOG.ACTIVITIES' | translate }}:</h2>
 
 <!--       <ion-card *ngFor="let log of logList">
 
@@ -95,17 +95,19 @@
 
     <div *ngSwitchCase="'diary'">
 
-      <ion-card #popoverContent *ngFor="let diary of diaryLog" padding>
+      <ion-card  *ngFor="let diary of diaryLog" padding>
 
-        <ion-item class="diary-date">
+        <ion-card-content #popoverContent>
+            <ion-item class="diary-date">
 
-          <p>{{ 'DATE' | translate }}: {{diary?.date | date: 'dd/MM/yyyy'}}</p>
-
-        </ion-item>
-
-          <p #popoverText class="diary-text">
-            {{diary?.diary}}
-          </p>
+                <p>{{ 'USER_DIARY.DATE' | translate }}: {{diary?.date | date: 'dd/MM/yyyy'}}</p>
+      
+              </ion-item>
+      
+                <p #popoverText class="diary-text">
+                  {{diary?.diary}}
+                </p>
+        </ion-card-content>
 
       </ion-card>
 
@@ -121,7 +123,7 @@
 
     <ion-footer class="footer-add-button">
 
-      <button class="create-log-button" ion-button icon-right full color="primary" (click)="goToAddLog()"> {{ 'CREATE_LOG' | translate }}
+      <button class="create-log-button" ion-button icon-right full color="primary" (click)="goToAddLog()"> {{ 'PAIN_LOG.CREATE_LOG' | translate }}
         <ion-icon name="add"></ion-icon>
       </button>
 
@@ -139,7 +141,7 @@
           <ion-datetime #picker pickerFormat="DD/MM/YYYY" displayFormat="DD/MM/YYYY" [(ngModel)]="dateEntry"></ion-datetime>
           <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
         </button> -->
-        <button ion-button clear item-right (click)="createDiary(diaryEntry, dateEntry)">{{ 'SEND_BUTTON' | translate }}</button>
+        <button ion-button clear item-right (click)="createDiary(diaryEntry, dateEntry)">{{ 'USER_DIARY.SEND_BUTTON' | translate }}</button>
       </ion-item>
 
     </ion-footer>

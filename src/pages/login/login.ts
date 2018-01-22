@@ -13,10 +13,15 @@ import firebase from 'firebase';
 })
 export class LoginPage {
 
-  langs = ['en', 'fi', 'np'];
+  langs = ['en', 'fi', 'po', 'gr'];
 
   public logoRef: any;
   public logo: any;
+
+  public languages: string;
+
+  public flagRef: any;
+  public flag: any;
 
   public loginForm: FormGroup;
   public loading: Loading;
@@ -30,6 +35,13 @@ export class LoginPage {
 
     });
 
+    this.flagRef = firebase.storage().ref().child('flags/');
+
+    this.flagRef.child('Finland.png').getDownloadURL().then((url) => {
+      this.flag = url;
+    });
+
+
     this.loginForm = formBuilder.group({
       email: [
         '',
@@ -41,7 +53,7 @@ export class LoginPage {
       ]
     });
 
-    translate.addLangs(["fi", "en"]);
+    translate.addLangs(["fi", "en", "po", "gr"]);
     translate.setDefaultLang('fi');
 
     let browserLang = translate.getBrowserLang();
