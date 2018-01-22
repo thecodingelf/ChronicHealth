@@ -19,6 +19,7 @@ import { ProfileProvider } from '../providers/profile/profile';
 import { ToastService } from '../services/toast/toast.service';
 import { ChatProvider } from '../providers/chat/chat';
 import { DiaryProvider } from '../providers/diary/diary';
+import { environment } from './environments/environment';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -46,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
     MyApp,
   ],
   providers: [
+    {provide: 'defaultLanguage', useValue: environment.defaultLanguage},
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },

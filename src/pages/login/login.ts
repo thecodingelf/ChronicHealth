@@ -53,11 +53,11 @@ export class LoginPage {
       ]
     });
 
-    translate.addLangs(["fi", "en", "po", "gr"]);
-    translate.setDefaultLang('fi');
+    /* translate.addLangs(["fi", "en", "po", "gr"]);
+    translate.setDefaultLang('fi'); */
 
-    let browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/fi|en/) ? browserLang : 'fi');
+    /* let browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/fi|en/) ? browserLang : 'fi'); */
 
     /*     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
     

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Inject } from '@angular/core';
 import { Platform, Config, NavController, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +25,18 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any }>;
 
-  constructor(private toast: ToastService, private translate: TranslateService, private config: Config, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public authProvider: AuthProvider) {
+  constructor(@Inject('defaultLanguage') private defaultLanguage: string, 
+                                         private toast: ToastService, 
+                                         private translate: TranslateService, 
+                                         private config: Config, 
+                                         platform: Platform, 
+                                         statusBar: StatusBar, 
+                                         splashScreen: SplashScreen, 
+                                         public authProvider: AuthProvider) {
+
+    translate.setDefaultLang(defaultLanguage);
+
+    translate.use(localStorage['language'] || defaultLanguage);
 
     // Initializes the firebase for the application.
     firebase.initializeApp(FIREBASE_CONFIG);
@@ -54,14 +65,14 @@ export class MyApp {
       splashScreen.hide();
     });
     // Initializes the translation.
-    this.initTranslate();
+    // this.initTranslate();
 
   }
   
   // Sets the default language to finnish language.
-  initTranslate() {
+  /* initTranslate() {
     // Set the default language for translation strings, and the current language.
-    this.translate.setDefaultLang('fi');
+    this.translate.setDefaultLang(defaultLanguage);
 
     /*    if (this.translate.getBrowserLang() !== undefined) {
           this.translate.use(this.translate.getBrowserLang());
@@ -70,10 +81,10 @@ export class MyApp {
         }  */
 
     // Translates the back button.
-    this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
+   /*  this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
       this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
     });
-  }
+  } */ 
 
   // Takes the user to the terms & conditions page.
   termConditions(): void {
