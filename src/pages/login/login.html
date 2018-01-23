@@ -1,17 +1,11 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <!-- <ion-col>
+      <ion-col>
           <ion-label>{{ 'LOGIN.SELECT_LANGUAGE' | translate }}:</ion-label>
-      </ion-col> -->
+      </ion-col>
       <ion-col>
          <app-language-selector [languages]="languages"></app-language-selector>
-        <!-- <select #langSelect (change)="translate.use(langSelect.value)">
-            <option *ngFor="let lang of languages" [value]="lang.id" [selected]="lang === translate.currentLang">{{ lang.title }}</option>
-          </select> -->
-          <!--  <select class="form-control" id="languages" [(ngModel)]="languageSelected" (change)="onLanguageChange($event.target.value)">
-            <option *ngFor="let lang of languages" [value]="lang.id">{{lang.title}}</option>
-        </select>  -->
       </ion-col>
     </ion-row>
   </ion-grid>

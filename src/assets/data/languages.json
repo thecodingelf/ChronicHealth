@@ -2,21 +2,21 @@
     {
         "id": "en",
         "title": "English",
-        "icon": "USA.png"
+        "icon": "en-EN.png"
     },
     {
         "id": "fi",
         "title": "Finnish",
-        "icon": "Finland.png"
+        "icon": "fi-FI.png"
     },
     {
         "id": "gr",
         "title": "Greece",
-        "icon": "Greece.png"
+        "icon": "gr-GR.png"
     },
     {
         "id": "po",
         "title": "Portuguese",
-        "icon": "Portugal.png"
+        "icon": "po-PO.png"
     }
 ]

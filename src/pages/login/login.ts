@@ -35,13 +35,6 @@ export class LoginPage {
 
     });
 
-    this.flagRef = firebase.storage().ref().child('flags/');
-
-    this.flagRef.child('Finland.png').getDownloadURL().then((url) => {
-      this.flag = url;
-    });
-
-
     this.loginForm = formBuilder.group({
       email: [
         '',

@@ -25,14 +25,15 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any }>;
 
-  constructor(@Inject('defaultLanguage') private defaultLanguage: string, 
-                                         private toast: ToastService, 
-                                         private translate: TranslateService, 
-                                         private config: Config, 
-                                         platform: Platform, 
-                                         statusBar: StatusBar, 
-                                         splashScreen: SplashScreen, 
-                                         public authProvider: AuthProvider) {
+  constructor( @Inject('defaultLanguage')
+  private defaultLanguage: string,
+    private toast: ToastService,
+    private translate: TranslateService,
+    private config: Config,
+    platform: Platform,
+    statusBar: StatusBar,
+    splashScreen: SplashScreen,
+    public authProvider: AuthProvider) {
 
     translate.setDefaultLang(defaultLanguage);
 
@@ -68,7 +69,7 @@ export class MyApp {
     // this.initTranslate();
 
   }
-  
+
   // Sets the default language to finnish language.
   /* initTranslate() {
     // Set the default language for translation strings, and the current language.
@@ -80,11 +81,11 @@ export class MyApp {
           this.translate.use('fi'); // Set your language here
         }  */
 
-    // Translates the back button.
-   /*  this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
-      this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
-    });
-  } */ 
+  // Translates the back button.
+  /*  this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
+     this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
+   });
+ } */
 
   // Takes the user to the terms & conditions page.
   termConditions(): void {
