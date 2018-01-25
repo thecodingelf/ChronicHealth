@@ -2,7 +2,7 @@
     {
         "id": "en",
         "title": "English",
-        "icon": "en-EN.png"
+        "icon": "../images/flags/en-EN.png"
     },
     {
         "id": "fi",
@@ -12,7 +12,7 @@
     {
         "id": "gr",
         "title": "Greece",
-        "icon": "gr-GR.png"
+        "icon": "../images/flags/gr-GR.png"
     },
     {
         "id": "po",
