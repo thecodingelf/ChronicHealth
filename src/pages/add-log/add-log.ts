@@ -27,4 +27,4 @@ export class AddLogPage {
     console.log('ionViewDidLoad AddLogPage');
   }
 
-} 
+}

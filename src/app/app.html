@@ -1,7 +1,7 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar color="primary">
-      <ion-title>{{ 'MENU' | translate }}</ion-title>
+      <ion-title>{{ 'SIDE_MENU.MENU' | translate }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -16,10 +16,10 @@
 
   <ion-footer>
     <button menuClose ion-item (click)="termConditions()">
-      {{ 'TERMS' | translate }}
+      {{ 'TERMS.TERMS_CONDITIONS' | translate }}
     </button>
     <button menuClose ion-item icon-right (click)="logOut()">
-      {{ 'LOG_OUT' | translate }}
+      {{ 'SIDE_MENU.LOG_OUT' | translate }}
       <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
     </button>
   </ion-footer>

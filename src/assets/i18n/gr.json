@@ -53,6 +53,8 @@
   "MODAL": {
     "BEFORE": "Πριν",
     "AFTER": "Μετά",
+    "PAIN_BEFORE": "Πόνου πριν",
+    "PAIN_AFTER": "Μετά τον πόνο",
     "ACTIVITY": "Δραστηριότητα",
     "DATE": "Ημερομηνία",
     "TIME": "Ώρα"

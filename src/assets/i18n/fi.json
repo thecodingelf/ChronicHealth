@@ -46,13 +46,15 @@
     "RATEYOURPAIN_BUTTON": "Kipu Loki"
   },
   "PAIN_LOG": {
-    "RATEYOURPAIN_BUTTON": "Rate Your Pain",
+    "RATEYOURPAIN_BUTTON": "Kipu Loki",
     "ACTIVITIES": "Aktiviteetit",
     "CREATE_LOG": "Luo Loki"
   },
   "MODAL": {
     "BEFORE": "Ennen",
     "AFTER": "Jälkeen",
+    "PAIN_BEFORE": "Kipu ennen",
+    "PAIN_AFTER": "Kipu jälkeen",
     "ACTIVITY": "Aktiviteetti",
     "DATE": "Päivämäärä",
     "TIME": "Kello"

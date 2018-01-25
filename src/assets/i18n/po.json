@@ -53,6 +53,8 @@
   "MODAL": {
     "BEFORE": "Antes",
     "AFTER": "Depois de",
+    "PAIN_BEFORE": "Dor antes",
+    "PAIN_AFTER": "Dor após",
     "ACTIVITY": "Atividade",
     "DATE": "Data",
     "TIME": "Hora"

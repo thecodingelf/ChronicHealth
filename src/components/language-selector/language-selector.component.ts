@@ -1,7 +1,7 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {Language} from './language';
-import {JsonFileService} from '../services/json-file.service';
-import {TranslateService} from '@ngx-translate/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Language } from './language';
+import { JsonFileService } from '../../services/json-file/json-file.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-language-selector',
@@ -12,13 +12,11 @@ export class LanguageSelectorComponent implements OnInit {
   languages: Language[];
   languageSelected: string = localStorage['language'] || 'en';
 
-  constructor(private jsonService: JsonFileService,
-              private translate: TranslateService) {
-  }
+  constructor(private jsonService: JsonFileService, private translate: TranslateService) { }
 
   ngOnInit() {
     if (!this.languages || this.languages.length === 0) {
-      this.jsonService.getData('../../assets/data/languages.json').subscribe(data => {
+      this.jsonService.getData('assets/data/languages.json').subscribe(data => {
         this.languages = data as Language[];
       });
     }

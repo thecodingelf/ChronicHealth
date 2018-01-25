@@ -1,3 +1,0 @@
-<select class="form-control" id="languages" [(ngModel)]="languageSelected" (change)="onLanguageChange($event.target.value)">
-    <option *ngFor="let lang of languages" [value]="lang.id">{{lang.title}} <img src="{{lang.icon}}" /></option>
-</select>

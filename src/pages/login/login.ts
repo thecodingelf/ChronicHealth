@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { EmailValidator } from '../../validators/email';
 import { AuthProvider } from '../../providers/auth/auth';
+import LanguageSelectorComponent from '../../components/language-selector/language-selector.component';
 import firebase from 'firebase';
 
 @IonicPage()

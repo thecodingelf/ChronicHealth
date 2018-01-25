@@ -5,8 +5,8 @@ import { IonicPageModule } from 'ionic-angular';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { LoginPage } from './login';
 import { createTranslateLoader } from '../../app/app.module';
-import { LanguageSelectorComponent } from '../../app/language-selector/language-selector.component';
-import {JsonFileService} from '../../app/services/json-file.service';
+import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
+import { JsonFileService } from '../../services/json-file/json-file.service';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
@@ -30,4 +30,4 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class LoginPageModule {}
+export class LoginPageModule { }
