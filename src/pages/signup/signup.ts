@@ -2,8 +2,11 @@ import { Component } from '@angular/core';
 import { Alert, AlertController, IonicPage, Loading, LoadingController, NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import * as firebase from 'firebase';
 import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
+// Toast Service.
+import { ToastService } from '../../services/toast/toast.service';
 
 @IonicPage()
 @Component({
@@ -13,8 +16,9 @@ import { EmailValidator } from '../../validators/email';
 export class SignupPage {
   public signupForm: FormGroup;
   public loading: Loading;
+  private auth: any;
 
-  constructor( public navCtrl: NavController, public authProvider: AuthProvider, public loadingCtrl: LoadingController, public alertCtrl: AlertController, formBuilder: FormBuilder, public translateService: TranslateService) {
+  constructor(private toast: ToastService, public navCtrl: NavController, public authProvider: AuthProvider, public loadingCtrl: LoadingController, public alertCtrl: AlertController, formBuilder: FormBuilder, public translateService: TranslateService) {
 
     this.signupForm = formBuilder.group({
       email: [
@@ -41,7 +45,14 @@ export class SignupPage {
       this.authProvider.signupUser(email, password).then(
         user => {
           this.loading.dismiss().then(() => {
-            this.navCtrl.setRoot('HomePage');
+            let user = firebase.auth().currentUser;
+            user.sendEmailVerification().then(function() {
+              // Email sent.
+            }).catch(function(error) {
+              // An error happened.
+            });
+            this.toast.show(`Email verfication has been sent!`);
+            this.navCtrl.setRoot('LoginPage');
           });
         },
         error => {

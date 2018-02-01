@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthProvider } from '../../providers/auth/auth';
-import { ToastService } from "../../services/toast/toast.service";
 import firebase from 'firebase';
 
 
@@ -18,7 +17,7 @@ export class LiveStreamPage {
   newmessage: string = '';
   messagesList;
 
-  constructor(private toast: ToastService, public navCtrl: NavController, public alert: AlertController, public authProvider: AuthProvider, public translateService: TranslateService) {
+  constructor(public navCtrl: NavController, public alert: AlertController, public authProvider: AuthProvider, public translateService: TranslateService) {
 
     // Reference to database where messages are being stored.
     this.ref = firebase.database().ref('messages');

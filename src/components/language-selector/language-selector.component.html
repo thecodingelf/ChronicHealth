@@ -1,8 +1,11 @@
 <select class="form-control" id="languages" [(ngModel)]="languageSelected" (change)="onLanguageChange($event.target.value)">
-    <option *ngFor="let lang of languages" [value]="lang.id"><img [attr.src]="lang.icon" /> <!-- <img src="{{lang.icon}}" /> --></option>
+    <option *ngFor="let lang of languages" [value]="lang.id">{{ lang.icon }}
+<!--         <img [attr.src]="lang.icon" /> 
+        <img src="../../assets/images/flags/en-En.png" /> -->
+    </option>
 </select>
 <!-- <ion-select class="form-control" id="languages" [(ngModel)]="languageSelected" (change)="onLanguageChange($event.target.value)">
     <ion-option *ngFor="let lang of languages" [value]="lang.id">
         {{lang.title}} <img src="{{lang.icon}}" />
     </ion-option>
-</ion-select> -->
+</ion-select> --> 

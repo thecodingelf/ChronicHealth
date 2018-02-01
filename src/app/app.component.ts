@@ -7,10 +7,12 @@ import { AuthProvider } from '../providers/auth/auth';
 // Service.
 import { ToastService } from "../services/toast/toast.service";
 // Firebase.
-import firebase from 'firebase';
+import * as firebase from 'firebase';
+import { Unsubscribe } from 'firebase/app';
 import { FIREBASE_CONFIG } from './credentials';
 // Language translate.
 import { TranslateService } from '@ngx-translate/core';
+
 
 
 @Component({
@@ -35,6 +37,7 @@ export class MyApp {
     splashScreen: SplashScreen,
     public authProvider: AuthProvider) {
 
+    // Initiliazes the default language.
     translate.setDefaultLang(defaultLanguage);
 
     translate.use(localStorage['language'] || defaultLanguage);
@@ -44,15 +47,34 @@ export class MyApp {
 
     // Takes user to login screen if they are not logged in.
     // Takes user to home screen if they are logged in before.
-    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-      if (!user) {
-        this.rootPage = 'LoginPage';
-        unsubscribe();
-      } else {
-        this.rootPage = 'HomePage';
-        unsubscribe();
-      }
-    });
+    /*     const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+          if (!user) {
+            this.rootPage = 'LoginPage';
+            unsubscribe();
+          } else {
+            this.rootPage = 'HomePage';
+            unsubscribe();
+          }
+        }); */
+
+    const unsubscribe: Unsubscribe = firebase
+      .auth()
+      .onAuthStateChanged(user => {
+        if (user) {
+          if (!user.emailVerified) {
+            // User can't stay logged in application after closing if not have verfied the email.
+            // Toast will notify user that they need to verify email before they can log in.
+            this.nav.setRoot('LoginPage');
+            this.toast.show(`Email hasn't been verified!`)
+          } else {
+            this.rootPage = 'HomePage';
+            unsubscribe();
+          }
+        } else {
+          this.rootPage = 'LoginPage';
+          unsubscribe();
+        }
+      });
 
     // Content of the sidemenu.
     this.pages = [
@@ -65,27 +87,8 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-    // Initializes the translation.
-    // this.initTranslate();
 
   }
-
-  // Sets the default language to finnish language.
-  /* initTranslate() {
-    // Set the default language for translation strings, and the current language.
-    this.translate.setDefaultLang(defaultLanguage);
-
-    /*    if (this.translate.getBrowserLang() !== undefined) {
-          this.translate.use(this.translate.getBrowserLang());
-        } else {
-          this.translate.use('fi'); // Set your language here
-        }  */
-
-  // Translates the back button.
-  /*  this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
-     this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
-   });
- } */
 
   // Takes the user to the terms & conditions page.
   termConditions(): void {
@@ -107,4 +110,3 @@ export class MyApp {
   }
 
 }
-

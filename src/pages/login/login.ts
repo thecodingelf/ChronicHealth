@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { Alert, AlertController, IonicPage, Loading, LoadingController, NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { EmailValidator } from '../../validators/email';
 import { AuthProvider } from '../../providers/auth/auth';
-import LanguageSelectorComponent from '../../components/language-selector/language-selector.component';
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -46,41 +45,6 @@ export class LoginPage {
         Validators.compose([Validators.required, Validators.minLength(6)])
       ]
     });
-
-    /* translate.addLangs(["fi", "en", "po", "gr"]);
-    translate.setDefaultLang('fi'); */
-
-    /* let browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/fi|en/) ? browserLang : 'fi'); */
-
-    /*     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-    
-          if (event.lang == 'fi') {
-            this.translate.setDefaultLang('fi');
-          }
-    
-          else if (event.lang == 'en') {
-            this.translate.setDefaultLang('en');
-          }
-    
-          else if (event.lang == 'np') {
-            this.translate.setDefaultLang('np');
-          }
-    
-          else if (event.lang == 'gr') {
-            this.translate.setDefaultLang('gr');
-          }
-    
-          else if (event.lang == 'po') {
-            this.translate.setDefaultLang('po');
-          }
-    
-          else if (event.lang == 'pl') {
-            this.translate.setDefaultLang('pl');
-          }    
-    
-          console.log('Language changed ' + this.translate.currentLang);
-        }); */
 
   }
 
