@@ -1,17 +1,7 @@
 <ion-content padding>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-<!--           <ion-label>{{ 'LOGIN.SELECT_LANGUAGE' | translate }}:</ion-label> -->
-      </ion-col>
-      <ion-col>
-         <app-language-selector [languages]="languages"></app-language-selector>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
   <ion-item no-lines>
     <img class="img-responsive" src="{{logo}}" />
-    <img src="../../assets/images/flags/en-En.png" />
   </ion-item>
 
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
@@ -44,3 +34,16 @@
   </button>
 
 </ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+<!--    <ion-label>{{ 'LOGIN.SELECT_LANGUAGE' | translate }}:</ion-label> -->
+      </ion-col>
+      <ion-col>
+         <app-language-selector></app-language-selector>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

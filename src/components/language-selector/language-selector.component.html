@@ -1,7 +1,6 @@
-<select class="form-control" id="languages" [(ngModel)]="languageSelected" (change)="onLanguageChange($event.target.value)">
-    <option *ngFor="let lang of languages" [value]="lang.id">{{ lang.icon }}
-<!--         <img [attr.src]="lang.icon" /> 
-        <img src="../../assets/images/flags/en-En.png" /> -->
+<select class="form-control language-select" id="languages" [(ngModel)]="languageSelected" (change)="onLanguageChange($event.target.value)">
+    <option *ngFor="let lang of languages" [value]="lang.id">
+        {{ lang.icon }}  {{ lang.title }}
     </option>
 </select>
 <!-- <ion-select class="form-control" id="languages" [(ngModel)]="languageSelected" (change)="onLanguageChange($event.target.value)">

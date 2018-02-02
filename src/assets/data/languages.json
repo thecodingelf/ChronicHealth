@@ -1,22 +1,18 @@
 [
     {
         "id": "en",
-        "title": "English",
-        "icon": "../../assets/images/flags/en-EN.png"
+        "title": "🇺🇸 English"
     },
     {
         "id": "fi",
-        "title": "Finnish",
-        "icon": "fi-FI.png"
+        "title": "🇫🇮 Finnish"
     },
     {
         "id": "gr",
-        "title": "Greece",
-        "icon": "images/flags/gr-GR.png"
+        "title": "🇬🇷 Greece"
     },
     {
         "id": "po",
-        "title": "Portuguese",
-        "icon": "po-PO.png"
+        "title": "🇵🇹 Portuguese"
     }
 ]

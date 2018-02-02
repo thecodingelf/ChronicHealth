@@ -48,6 +48,10 @@ export class LoginPage {
 
   }
 
+  goToGuide(): void {
+    this.navCtrl.push('AppInstructionsPage');
+  }
+
   loginUser(): void {
     if (!this.loginForm.valid) {
       console.log(
