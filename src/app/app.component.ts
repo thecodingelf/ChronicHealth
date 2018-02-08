@@ -80,8 +80,8 @@ export class MyApp {
 
     // Content of the sidemenu.
     this.pages = [
-      { title: 'Profiili', component: 'ProfilePage' },
-      { title: 'Description', component: 'AddDescriptionPage' },
+      { title: 'Profiili', component: 'ProfilePage' }
+/*       { title: 'Description', component: 'AddDescriptionPage' }, */
     ];
 
     platform.ready().then(() => {
