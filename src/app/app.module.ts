@@ -20,6 +20,7 @@ import { ToastService } from '../services/toast/toast.service';
 import { ChatProvider } from '../providers/chat/chat';
 import { DiaryProvider } from '../providers/diary/diary';
 import { environment } from './environments/environment';
+import { DescriptionProvider } from '../providers/description/description';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -57,7 +58,8 @@ export function createTranslateLoader(http: HttpClient) {
     ToastService,
     ProfileProvider,
     ChatProvider,
-    DiaryProvider
+    DiaryProvider,
+    DescriptionProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

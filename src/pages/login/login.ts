@@ -81,6 +81,15 @@ export class LoginPage {
     }
   }
 
+/*   loginUser2(user): void {
+    if (!user.emailVerified) {
+      this.loading = this.loadingCtrl.create();
+      this.loading.present();
+    } else {
+
+    }
+  } */
+
   changeLanguage(language: string): void {
     this.translate.use(language);
   }

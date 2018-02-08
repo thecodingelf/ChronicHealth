@@ -1,5 +1,5 @@
 import { Component, ViewChild, Inject } from '@angular/core';
-import { Platform, Config, NavController, Nav } from 'ionic-angular';
+import { Platform, Config, NavController, Nav, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 // Providers.
@@ -28,14 +28,16 @@ export class MyApp {
   pages: Array<{ title: string, component: any }>;
 
   constructor( @Inject('defaultLanguage')
-  private defaultLanguage: string,
+    private defaultLanguage: string,
     private toast: ToastService,
     private translate: TranslateService,
     private config: Config,
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
-    public authProvider: AuthProvider) {
+    public authProvider: AuthProvider,
+    public alertCtrl: AlertController
+    ) {
 
     // Initiliazes the default language.
     translate.setDefaultLang(defaultLanguage);
@@ -64,8 +66,8 @@ export class MyApp {
           if (!user.emailVerified) {
             // User can't stay logged in application after closing if not have verfied the email.
             // Toast will notify user that they need to verify email before they can log in.
-            this.nav.setRoot('LoginPage');
             this.toast.show(`Email hasn't been verified!`)
+            this.nav.setRoot('LoginPage');
           } else {
             this.rootPage = 'HomePage';
             unsubscribe();
@@ -79,6 +81,7 @@ export class MyApp {
     // Content of the sidemenu.
     this.pages = [
       { title: 'Profiili', component: 'ProfilePage' },
+      { title: 'Description', component: 'AddDescriptionPage' },
     ];
 
     platform.ready().then(() => {

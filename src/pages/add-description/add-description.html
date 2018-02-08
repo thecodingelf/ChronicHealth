@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>AddDescription</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-item>
+        <ion-label stacked>Header</ion-label>
+        <ion-input [(ngModel)]="painHeader" type="text" placeholder="Write here...">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked>Description</ion-label>
+          <ion-input [(ngModel)]="painDescription" type="text" placeholder="Write here...">
+          </ion-input>
+        </ion-item>
+    
+      <ion-item>
+        <ion-label>Pain Severity</ion-label>
+        <ion-select [(ngModel)]="painSeverity" multiple="false" required placeholder="Severity of Pain">
+          <ion-option value="0">0</ion-option>
+          <ion-option value="1">1</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="5">5</ion-option>
+          <ion-option value="6">6</ion-option>
+          <ion-option value="7">7</ion-option>
+          <ion-option value="8">8</ion-option>
+          <ion-option value="9">9</ion-option>
+          <ion-option value="10">10</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <button ion-button block (click)="addDescription(painHeader, painDescription, painSeverity)">Submit</button>
+
+</ion-content>
