@@ -4,7 +4,7 @@
     <img class="img-responsive" src="{{logo}}" />
   </ion-item>
 
-  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+  <form [formGroup]="loginForm" (submit)="loginUser(user)" novalidate>
     <ion-item>
       <ion-label stacked>{{ 'LOGIN.EMAIL' | translate }}</ion-label>
       <ion-input formControlName="email" type="email" placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_EMAIL' | translate }}" [class.invalid]="!loginForm.controls.email.valid && blur">

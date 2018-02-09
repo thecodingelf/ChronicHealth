@@ -7,10 +7,10 @@
             Chronic Health
           </ion-title>
           <ion-buttons end>
-              <button ion-button menuToggle>
-                <ion-icon name="menu"></ion-icon>
-              </button>
-            </ion-buttons>
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+          </ion-buttons>
         </ion-navbar>
       </ion-header>
     </div>
@@ -50,46 +50,16 @@
 
       <h2>{{ 'PAIN_LOG.ACTIVITIES' | translate }}:</h2>
 
-<!--       <ion-card *ngFor="let log of logList">
-
-        <ion-item class="log-item" no-lines>
-          <h2>{{log?.log}}</h2>
-          <p>{{ 'DATE' | translate }}: {{log?.date}}</p>
-          <p>{{ 'TIME' | translate }}: {{log?.time}}</p>
-        </ion-item>
-
-        <ion-card-content>
-          <p>{{ 'PAIN_BEFORE' | translate }}:
-            <ion-badge [ngClass]="{ badgeColor: log?.painlevelbefore >= 8 }" [color]="log?.painlevelbefore <= 4 ? 'secondary' : 'medium'">
-              {{log?.painlevelbefore}}</ion-badge>
-          </p>
-          <p>{{ 'PAIN_AFTER' | translate }}:
-            <ion-badge [ngClass]="{ badgeColor: log?.painlevelafter >= 8 }" [color]="log?.painlevelafter <= 4 ? 'secondary' : 'medium'">
-              {{log?.painlevelafter}}</ion-badge>
-          </p>
-        </ion-card-content>
-
-        <ion-row>
-          <ion-col>
-            <button ion-button clear>{{ 'BEFORE' | translate }}</button>
-          </ion-col>
-          <ion-col>
-            <button ion-button clear>{{ 'AFTER' | translate }}</button>
-          </ion-col>
-        </ion-row>
-
-      </ion-card> -->
-
       <ion-card *ngFor="let log of logList">
         <ion-list>
           <ion-item>
             <ion-row>
               <ion-col>
-                  <h2>{{log?.log}}</h2>
+                <h2>{{log?.log}}</h2>
               </ion-col>
               <ion-col></ion-col>
               <ion-col end>
-                    <ion-icon ios="ios-open" md="md-open" (click)="openModal(log.id)"></ion-icon>
+                <ion-icon ios="ios-open" md="md-open" (click)="openModal(log.id)"></ion-icon>
               </ion-col>
             </ion-row>
           </ion-item>
@@ -100,18 +70,18 @@
 
     <div *ngSwitchCase="'diary'">
 
-      <ion-card  *ngFor="let diary of diaryLog" padding>
+      <ion-card *ngFor="let diary of diaryLog" padding>
 
         <ion-card-content #popoverContent>
-            <ion-item class="diary-date">
+          <ion-item class="diary-date">
 
-                <p>{{ 'USER_DIARY.DATE' | translate }}: {{diary?.date | date: 'dd/MM/yyyy'}}</p>
-      
-              </ion-item>
-      
-                <p #popoverText class="diary-text">
-                  {{diary?.diary}}
-                </p>
+            <p>{{ 'USER_DIARY.DATE' | translate }}: {{diary?.date | date: 'dd/MM/yyyy'}}</p>
+
+          </ion-item>
+
+          <p #popoverText class="diary-text">
+            {{diary?.diary}}
+          </p>
         </ion-card-content>
 
       </ion-card>
@@ -142,10 +112,6 @@
 
       <ion-item>
         <ion-input type="text" placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_DIARY' | translate }}" [(ngModel)]="diaryEntry" clearInput></ion-input>
-<!--         <button ion-button clear (click)="picker.open()">
-          <ion-datetime #picker pickerFormat="DD/MM/YYYY" displayFormat="DD/MM/YYYY" [(ngModel)]="dateEntry"></ion-datetime>
-          <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
-        </button> -->
         <button ion-button clear item-right (click)="createDiary(diaryEntry, dateEntry)">{{ 'USER_DIARY.SEND_BUTTON' | translate }}</button>
       </ion-item>
 

@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 import { Alert, AlertController, IonicPage, Loading, LoadingController, NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+// Language translate.
 import { TranslateService } from '@ngx-translate/core';
+// Email validation.
 import { EmailValidator } from '../../validators/email';
+// Providers.
 import { AuthProvider } from '../../providers/auth/auth';
+import { ToastService } from './../../services/toast/toast.service';
+// Firebase.
 import * as firebase from 'firebase';
 
 @IonicPage()
@@ -17,16 +22,13 @@ export class LoginPage {
 
   public logoRef: any;
   public logo: any;
-
   public languages: string;
-
-  public flagRef: any;
   public flag: any;
 
   public loginForm: FormGroup;
   public loading: Loading;
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public authProvider: AuthProvider, formBuilder: FormBuilder, public translate: TranslateService) {
+  constructor(private toast: ToastService, public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, public authProvider: AuthProvider, formBuilder: FormBuilder, public translate: TranslateService) {
 
     this.logoRef = firebase.storage().ref().child('img/');
 
@@ -81,14 +83,37 @@ export class LoginPage {
     }
   }
 
-/*   loginUser2(user): void {
-    if (!user.emailVerified) {
-      this.loading = this.loadingCtrl.create();
-      this.loading.present();
-    } else {
-
-    }
-  } */
+  /*    loginUser(): void {
+       if (user) {
+        if (!user.emailVerified) {
+          this.loading = this.loadingCtrl.create();
+          this.loading.present();
+          this.navCtrl.setRoot('LoginPage')
+          this.toast.show(`Email hasn't been verified`);
+          }
+       } else {
+          const email = this.loginForm.value.email;
+          const password = this.loginForm.value.password;
+          this.authProvider.loginUser(email, password).then(
+            authData => {
+              this.loading.dismiss().then(() => {
+                this.navCtrl.setRoot('HomePage');
+              });
+            },
+            error => {
+              this.loading.dismiss().then(() => {
+                const alert: Alert = this.alertCtrl.create({
+                  message: error.message,
+                  buttons: [{ text: 'Ok', role: 'Cancel' }]
+                });
+                alert.present();
+              });
+            }
+          );
+          this.loading = this.loadingCtrl.create();
+          this.loading.present();
+        }
+      } */
 
   changeLanguage(language: string): void {
     this.translate.use(language);
@@ -102,7 +127,7 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+
   }
 
 }

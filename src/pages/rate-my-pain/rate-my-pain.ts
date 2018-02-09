@@ -69,7 +69,7 @@ export class RateMyPainPage {
     this.navCtrl.push('AddLogPage');
   }
 
-/*   removeItem(itemId: any): void {
+/* removeItem(itemId: any): void {
     this.logListRef.remove(itemId);
   } */
 

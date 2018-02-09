@@ -15,16 +15,19 @@ import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AuthProvider } from '../providers/auth/auth';
 import { LogProvider } from '../providers/log/log';
 import { ProfileProvider } from '../providers/profile/profile';
-// Services.
-import { ToastService } from '../services/toast/toast.service';
 import { ChatProvider } from '../providers/chat/chat';
 import { DiaryProvider } from '../providers/diary/diary';
-import { environment } from './environments/environment';
 import { DescriptionProvider } from '../providers/description/description';
+// Services.
+import { ToastService } from '../services/toast/toast.service';
+
+import { environment } from './environments/environment';
+
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
 
 @NgModule({
   declarations: [
