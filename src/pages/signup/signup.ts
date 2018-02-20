@@ -33,40 +33,80 @@ export class SignupPage {
 
   }
 
-  signupUser(): void {
+  async signupUser(): Promise<void> {
     if (!this.signupForm.valid) {
       console.log(
-        `Need to complete the form, current value: ${this.signupForm.value}`
+        `Form is not valid yet, current value: ${this.signupForm.value}`
       );
     } else {
+      const loading: Loading = this.loadingCtrl.create();
+      loading.present();
+
       const email: string = this.signupForm.value.email;
       const password: string = this.signupForm.value.password;
 
-      this.authProvider.signupUser(email, password).then(
-        user => {
-          this.loading.dismiss().then(() => {
-            let user = firebase.auth().currentUser;
-            user.sendEmailVerification().then(function() {
-              // Email sent.
-            }).catch(function(error) {
-              // An error happened.
+      try {
+        await this.authProvider.signupUser(email, password)
+          .then(
+            async user => {
+              await loading.dismiss().then(() => {
+                let user = firebase.auth().currentUser;
+                user.sendEmailVerification().then(function () {
+                  // Email sent.
+                }).catch(function (error) {
+                  // An error happend!
+                });
+                this.toast.show(`Verification email has been sent!`);
+                this.navCtrl.setRoot('LoginPage');
+              });
             });
-            this.toast.show(`Email verfication has been sent!`);
-            this.navCtrl.setRoot('LoginPage');
-          });
-        },
-        error => {
-          this.loading.dismiss().then(() => {
-            const alert: Alert = this.alertCtrl.create({
-              message: error.message,
-              buttons: [{ text: 'Ok', role: 'cancel' }]
-            });
-            alert.present();
-          });
-        }
-      );
-      this.loading = this.loadingCtrl.create();
-      this.loading.present();
+      } catch (error) {
+        await loading.dismiss();
+        const alert: Alert = this.alertCtrl.create({
+          message: error.message,
+          buttons: [{ text: 'Ok', role: 'Cancel' }]
+        });
+        alert.present();
+      }
     }
   }
+  
+  /* 
+    signupUser(): void {
+      if (!this.signupForm.valid) {
+        console.log(
+          `Need to complete the form, current value: ${this.signupForm.value}`
+        );
+      } else {
+        const email: string = this.signupForm.value.email;
+        const password: string = this.signupForm.value.password;
+  
+        this.authProvider.signupUser(email, password).then(
+          user => {
+            this.loading.dismiss().then(() => {
+              let user = firebase.auth().currentUser;
+              user.sendEmailVerification().then(function() {
+                // Email sent.
+              }).catch(function(error) {
+                // An error happened.
+              });
+              this.toast.show(`Email verfication has been sent!`);
+              this.navCtrl.setRoot('LoginPage');
+            });
+          },
+          error => {
+            this.loading.dismiss().then(() => {
+              const alert: Alert = this.alertCtrl.create({
+                message: error.message,
+                buttons: [{ text: 'Ok', role: 'cancel' }]
+              });
+              alert.present();
+            });
+          }
+        );
+        this.loading = this.loadingCtrl.create();
+        this.loading.present();
+      }
+    } */
+
 }

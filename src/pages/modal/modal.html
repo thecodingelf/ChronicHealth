@@ -10,50 +10,50 @@
 
   <ion-card>
 
-      <div class="segment-element" padding>
-          <ion-segment [(ngModel)]="content">
-            <ion-segment-button value="painbefore">
-              {{ 'MODAL.BEFORE' | translate }}
-            </ion-segment-button>
-            <ion-segment-button value="painafter">
-              {{ 'MODAL.AFTER' | translate }}
-            </ion-segment-button>
-          </ion-segment>
-        </div>
-      
-        <div [ngSwitch]="content">
-
-            <div *ngSwitchCase="'painbefore'">
-
-    <ion-item class="log-item" no-lines>
-      <h2>{{currentLog?.log}}</h2>
-      <p>{{ 'MODAL.DATE' | translate }}: {{currentLog?.date | date: 'dd/MM/yyyy'}}</p>
-      <p>{{ 'MODAL.TIME' | translate }}: {{currentLog?.time | date: 'HH:mm'}}</p>
-    </ion-item>
-
-    <ion-card-content>
-      <p>{{ 'MODAL.PAIN_BEFORE' | translate }}:
-        <ion-badge [ngClass]="{ badgeColor: currentLog?.painlevelbefore >= 8 }" [color]="currentLog?.painlevelbefore <= 4 ? 'secondary' : 'medium'">
-          {{currentLog?.painlevelbefore}}</ion-badge>
-      </p>
-<!--       <p>{{ 'PAIN_AFTER' | translate }}:
-        <ion-badge [ngClass]="{ badgeColor: currentLog?.painlevelafter >= 8 }" [color]="currentLog?.painlevelafter <= 4 ? 'secondary' : 'medium'">
-          {{currentLog?.painlevelafter}}</ion-badge>
-      </p> -->
-    </ion-card-content>
-
+    <div class="segment-element" padding>
+      <ion-segment [(ngModel)]="content">
+        <ion-segment-button value="painbefore">
+          {{ 'MODAL.BEFORE' | translate }}
+        </ion-segment-button>
+        <ion-segment-button value="painafter">
+          {{ 'MODAL.AFTER' | translate }}
+        </ion-segment-button>
+      </ion-segment>
     </div>
 
-    <div *ngSwitchCase="'painafter'">
+    <div [ngSwitch]="content">
+
+      <div *ngSwitchCase="'painbefore'">
 
         <ion-item class="log-item" no-lines>
           <h2>{{currentLog?.log}}</h2>
           <p>{{ 'MODAL.DATE' | translate }}: {{currentLog?.date | date: 'dd/MM/yyyy'}}</p>
           <p>{{ 'MODAL.TIME' | translate }}: {{currentLog?.time | date: 'HH:mm'}}</p>
         </ion-item>
-    
+
         <ion-card-content>
-<!--           <p>{{ 'PAIN_BEFORE' | translate }}:
+          <p>{{ 'MODAL.PAIN_BEFORE' | translate }}:
+            <ion-badge [ngClass]="{ badgeColor: currentLog?.painlevelbefore >= 8 }" [color]="currentLog?.painlevelbefore <= 4 ? 'secondary' : 'medium'">
+              {{currentLog?.painlevelbefore}}</ion-badge>
+          </p>
+          <!--       <p>{{ 'PAIN_AFTER' | translate }}:
+        <ion-badge [ngClass]="{ badgeColor: currentLog?.painlevelafter >= 8 }" [color]="currentLog?.painlevelafter <= 4 ? 'secondary' : 'medium'">
+          {{currentLog?.painlevelafter}}</ion-badge>
+      </p> -->
+        </ion-card-content>
+
+      </div>
+
+      <div *ngSwitchCase="'painafter'">
+
+        <ion-item class="log-item" no-lines>
+          <h2>{{currentLog?.log}}</h2>
+          <p>{{ 'MODAL.DATE' | translate }}: {{currentLog?.date | date: 'dd/MM/yyyy'}}</p>
+          <p>{{ 'MODAL.TIME' | translate }}: {{currentLog?.time | date: 'HH:mm'}}</p>
+        </ion-item>
+
+        <ion-card-content>
+          <!--           <p>{{ 'PAIN_BEFORE' | translate }}:
             <ion-badge [ngClass]="{ badgeColor: currentLog?.painlevelbefore >= 8 }" [color]="currentLog?.painlevelbefore <= 4 ? 'secondary' : 'medium'">
               {{currentLog?.painlevelbefore}}</ion-badge>
           </p> -->
@@ -62,11 +62,11 @@
               {{currentLog?.painlevelafter}}</ion-badge>
           </p>
         </ion-card-content>
-    
-        </div>
-        </div>
 
-<!--     <ion-row>
+      </div>
+    </div>
+
+    <!--     <ion-row>
       <ion-col>
         <button ion-button clear>{{ 'BEFORE' | translate }}</button>
       </ion-col>

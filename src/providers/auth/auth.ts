@@ -1,15 +1,33 @@
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
+import { User } from '@firebase/auth-types';
 
 @Injectable()
 export class AuthProvider {
   constructor() { }
 
-  loginUser(email: string, password: string): Promise<any> {
+  loginUser(email: string, password: string): Promise<User> {
     return firebase.auth().signInWithEmailAndPassword(email, password);
   }
 
-  signupUser(email: string, password: string): Promise<any> {
+  async signupUser(email: string, password: string): Promise<User> {
+    try {
+      const newUser: User = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password);
+
+      await firebase
+        .database()
+        .ref(`/userProfile/${newUser.uid}/email`)
+        .set(email);
+        return newUser;
+    }
+    catch (error) {
+      throw error;
+    }
+  }
+
+/*   async signupUser(email: string, password: string): Promise<User> {
     return firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -23,7 +41,7 @@ export class AuthProvider {
         console.error(error);
         throw new Error(error);
       });
-  }
+  } */
 
   resetPassword(email: string): Promise<void> {
     return firebase.auth().sendPasswordResetEmail(email);

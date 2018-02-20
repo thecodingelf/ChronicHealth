@@ -4,7 +4,7 @@
     <img class="img-responsive" src="{{logo}}" />
   </ion-item>
 
-  <form [formGroup]="loginForm" (submit)="loginUser(user)" novalidate>
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
     <ion-item>
       <ion-label stacked>{{ 'LOGIN.EMAIL' | translate }}</ion-label>
       <ion-input formControlName="email" type="email" placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_EMAIL' | translate }}" [class.invalid]="!loginForm.controls.email.valid && blur">
@@ -15,7 +15,8 @@
     </ion-item>
     <ion-item>
       <ion-label stacked>{{ 'LOGIN.PASSWORD' | translate }}</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_PASSWORD' | translate }}" [class.invalid]="!loginForm.controls.password.valid && blur">
+      <ion-input formControlName="password" type="password" placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_PASSWORD' | translate }}"
+        [class.invalid]="!loginForm.controls.password.valid && blur">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">
@@ -39,10 +40,11 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-<!--    <ion-label>{{ 'LOGIN.SELECT_LANGUAGE' | translate }}:</ion-label> -->
+        <!-- <ion-label>{{ 'LOGIN.SELECT_LANGUAGE' | translate }}:</ion-label> -->
+        <!-- <ion-icon ios="ios-information-circle-outline" md="md-information-circle" (click)="goToGuide()"></ion-icon> -->
       </ion-col>
       <ion-col>
-         <app-language-selector></app-language-selector>
+        <app-language-selector></app-language-selector>
       </ion-col>
     </ion-row>
   </ion-grid>

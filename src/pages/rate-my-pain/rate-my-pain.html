@@ -1,6 +1,4 @@
 <div padding>
-  <div [ngSwitch]="logs">
-    <div *ngSwitchCase="'logyourpain'">
       <ion-header>
         <ion-navbar color="primary">
           <ion-title>
@@ -13,23 +11,7 @@
           </ion-buttons>
         </ion-navbar>
       </ion-header>
-    </div>
-    <div *ngSwitchCase="'diary'">
-      <ion-header>
-        <ion-navbar color="primary">
-          <ion-title>
-            Chronic Health
-          </ion-title>
-          <ion-buttons end>
-            <button ion-button icon-only (click)="presentPopover($event)">
-              <ion-icon ios="ios-settings" md="md-settings"></ion-icon>
-            </button>
-          </ion-buttons>
-        </ion-navbar>
-      </ion-header>
-    </div>
   </div>
-</div>
 
 <ion-content padding>
 

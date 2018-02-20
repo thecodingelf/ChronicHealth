@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Menu} from '../../app/nav/menu';
-
+/* import {Menu} from '../../app/nav/menu';
+ */
 
 @Injectable()
 export class JsonFileService {

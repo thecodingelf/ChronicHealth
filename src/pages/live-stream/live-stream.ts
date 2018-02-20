@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController } from 'ionic-angular';
+// Services.
 import { TranslateService } from '@ngx-translate/core';
+// Providers.
 import { AuthProvider } from '../../providers/auth/auth';
+import { ProfileProvider } from '../../providers/profile/profile';
+// Firebase.
 import firebase from 'firebase';
 
 
@@ -20,7 +24,7 @@ export class LiveStreamPage {
   constructor(public navCtrl: NavController, public alert: AlertController, public authProvider: AuthProvider, public translateService: TranslateService) {
 
     // Reference to database where messages are being stored.
-    this.ref = firebase.database().ref('messages');
+    this.ref = firebase.database().ref('chat/messages');
 
   }
 
@@ -31,7 +35,7 @@ export class LiveStreamPage {
       message: this.newmessage
     });
     this.newmessage = '';
-  } 
+  }
 
   ionViewDidLoad() {
 

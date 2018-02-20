@@ -54,32 +54,30 @@ export class LoginPage {
     this.navCtrl.push('AppInstructionsPage');
   }
 
-  loginUser(): void {
+  async loginUser(): Promise<void> {
     if (!this.loginForm.valid) {
       console.log(
         `Form is not valid yet, current value: ${this.loginForm.value}`
       );
     } else {
+      const loading: Loading = this.loadingCtrl.create();
+      loading.present();
+
       const email = this.loginForm.value.email;
       const password = this.loginForm.value.password;
-      this.authProvider.loginUser(email, password).then(
-        authData => {
-          this.loading.dismiss().then(() => {
-            this.navCtrl.setRoot('HomePage');
-          });
-        },
-        error => {
-          this.loading.dismiss().then(() => {
-            const alert: Alert = this.alertCtrl.create({
-              message: error.message,
-              buttons: [{ text: 'Ok', role: 'cancel' }]
-            });
-            alert.present();
-          });
-        }
-      );
-      this.loading = this.loadingCtrl.create();
-      this.loading.present();
+
+      try {
+        const loginUser: firebase.User = await this.authProvider.loginUser(email, password);
+        await loading.dismiss();
+        this.navCtrl.setRoot('HomePage');
+      } catch (error) {
+        await loading.dismiss();
+        const alert: Alert = this.alertCtrl.create({
+          message: error.message,
+          buttons: [{ text: 'Ok', role: 'Cancel' }]
+        });
+        alert.present();
+      }
     }
   }
 
@@ -124,10 +122,6 @@ export class LoginPage {
   }
   goToResetPassword(): void {
     this.navCtrl.push('ResetPasswordPage');
-  }
-
-  ionViewDidLoad() {
-
   }
 
 }

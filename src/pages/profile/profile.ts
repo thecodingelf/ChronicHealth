@@ -17,10 +17,16 @@ export class ProfilePage {
   public userName: string;
   public Country: string;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public authProvider: AuthProvider, public profileProvider: ProfileProvider, private toast: ToastService, public translateService: TranslateService) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public authProvider: AuthProvider, public profileProvider: ProfileProvider, private toast: ToastService, public translateService: TranslateService) {}
 
-
-
+  verifyAccount(): void {
+    let user = firebase.auth().currentUser;
+    user.sendEmailVerification().then(function() {
+      // Email sent.
+    }).catch(function(error) {
+      // An error happened.
+    });
+    this.toast.show(`Email verfication has been sent!`);
   }
 
   updateUserName(): void {

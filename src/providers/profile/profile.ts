@@ -8,6 +8,8 @@ export class ProfileProvider {
   public userProfile: firebase.database.Reference;
   public currentUser: firebase.User;
 
+  public userName: firebase.database.Reference;
+
   constructor() {
 
     firebase.auth().onAuthStateChanged(user => {
@@ -25,6 +27,10 @@ export class ProfileProvider {
 
   updateUsername(userName: string): Promise<any> {
     return this.userProfile.update({ userName });
+  }
+
+  getUserName(): firebase.database.Reference {
+    return this.userName;
   }
 
   updateCountry(Country: string): Promise<any> {

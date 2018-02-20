@@ -11,7 +11,7 @@ export class ChatProvider {
 
     this.Chat = firebase
     .database()
-    .ref(`/chat`);
+    .ref(`/chat/messages`);
 
   }
 

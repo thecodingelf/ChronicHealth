@@ -33,6 +33,10 @@ export class GraphsPage {
       {
         name: 'John',
         data: [5, 7, 3, 1, 10, 2, 6]
+      },
+      {
+        name: 'After',
+        data: [2, 4, 5, 6, 4, 1, 10]
       }
     ]
     });
