@@ -6,6 +6,8 @@ import { LogProvider } from '../../providers/log/log';
 // Service.
 import { TranslateService } from '@ngx-translate/core';
 
+import * as firebase from 'firebase';
+
 
 @IonicPage({
   segment: "rate-my-pain/:logId"
@@ -21,7 +23,17 @@ export class ModalPage {
 
   public currentLog: any = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public translateService: TranslateService) {}
+  public catRef: any;
+  public cat: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider, public logProvider: LogProvider, public translateService: TranslateService) {
+    this.catRef = firebase.storage().ref().child('img/activity/');
+
+    this.catRef.child('running.jpg').getDownloadURL().then((url) => {
+      this.cat = url;
+
+    });
+  }
 
   ionViewDidLoad() {
     // Gets the opened log entry and shows the content in the modal.
@@ -32,5 +44,7 @@ export class ModalPage {
         this.currentLog.id = logSnapshot.key;
       });
   }
+
+    
 
 }

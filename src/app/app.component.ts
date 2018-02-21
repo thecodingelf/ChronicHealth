@@ -94,6 +94,10 @@ export class MyApp {
 
   }
 
+    goHome(): void {
+    this.nav.setRoot('HomePage')
+  }
+
   // Takes the user to the terms & conditions page.
   termConditions(): void {
     this.nav.push('TermsConditionsPage')

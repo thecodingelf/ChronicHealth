@@ -16,7 +16,8 @@ export class GraphsPage {
   ionViewDidLoad() {
     let myChart = HighCharts.chart('container', {
       chart: {
-        type: 'line'
+
+        type: 'areaspline'
       },
       title: {
         text: 'Daily Graph'
@@ -31,7 +32,7 @@ export class GraphsPage {
       },
       series: [
       {
-        name: 'John',
+        name: 'Before',
         data: [5, 7, 3, 1, 10, 2, 6]
       },
       {
