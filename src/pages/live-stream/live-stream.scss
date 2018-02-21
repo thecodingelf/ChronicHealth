@@ -1,5 +1,8 @@
 page-live-stream {
 
+    $chat-bubble: #387ef5;
+    $bubble-chat: #42A5F5;
+
     .footer {
         display: flex;
         flex-direction: row;
@@ -13,5 +16,158 @@ page-live-stream {
         border-radius: 0;
         margin: 0;
     }
+
+            .msg-info {
+              p {
+                font-size: .9em;
+                color: #fff;
+              }
+            }
+    
+            .message {
+                font-size: 1.2em;
+                word-wrap: break-word;
+                white-space: pre-wrap;
+                color: #fff;
+              }
+            
+              .message-detail {
+                white-space: nowrap;
+                font-size: 12px;
+                text-align: right;
+                color: #fff;
+              }
+            
+              .message-detail-img {
+                white-space: nowrap;
+                font-size: 12px;
+                text-align: right;
+                position: absolute;
+                right: 7.5px;
+                bottom: 10px;
+              }
+            
+              .chat-bubble {
+                background-color: $bubble-chat;
+                border: 1px solid $bubble-chat;
+                width: 100%;
+                border-radius: 15px;
+                display: inline-block;
+                padding: 5px 10px;
+                position: relative;
+                margin: 10px;
+                box-shadow: 1px 1px 5px #000;
+                max-width: 80%;
+              }
+            
+            
+              .chat-bubble-img {
+               background: transparent;
+                position: relative;
+                max-width: 80%;
+              }
+            
+              .chat-bubble:before {
+                content: "\00a0";
+                display: block;
+                height: 16px;
+                width: 9px;
+                position: absolute;
+                bottom: -7.5px;
+              }
+            
+              .chat-bubble.left {
+                background-color: $chat-bubble;
+                float: left;
+                text-align: left;
+                //margin-left: 45px;
+              }
+            
+              .chat-bubble-img.left {
+                float: left;
+                margin-left: 7.5px;
+              }
+            
+              .chat-bubble.left:before {
+                left: -15px;
+                top: -5px;
+                content: "";
+                text-align: left;
+                position: absolute;
+                border: 0 solid transparent;
+                border-top: 9px solid $chat-bubble;
+                border-radius: 0 20px 0;
+                width: 15px;
+                height: 30px;
+                transform: rotate(145deg);
+                -webkit-transform: rotate(145deg);
+              }
+            
+              .chat-bubble.right {
+                background-color: $chat-bubble;
+                color: white;
+                float: right;
+                text-align: right;
+                //margin-right: 45px;
+              }
+            
+              .chat-bubble-img.right {
+                color: white;
+                float: right;
+                padding: 5px;
+                margin-right: 7.5px;
+              }
+            
+              .chat-bubble-img.left {
+                color: white;
+                float: left;
+                padding-top: 5px;
+                margin-right: 7.5px;
+              }
+            
+              .chat-bubble.right:before {
+                right: -15px;
+                top: -5px;
+                content: "";
+                position: absolute;
+                border: 0 solid transparent;
+                border-top: 9px solid $chat-bubble;
+                border-radius: 20px 0px 20px;
+                width: 15px;
+                height: 30px;
+                -webkit-transform: rotate(220deg);
+                transform: rotate(220deg);
+            
+              }
+            
+              .chat-bubble.right a.autolinker {
+                color: #000;
+                font-weight: bold;
+              }
+            
+              img {
+                border-radius: 10px;
+              }
+
+            
+            .date {
+                background: antiquewhite;
+                margin: 0 auto;
+                display: inline-block;
+                border-radius: 5px;
+                padding: 1px 5px 1px 5px;
+                font-size: small;
+                margin: 2px;
+              }
+            
+              .date-container {
+                text-align: center;
+                // display: inline-block;
+            
+                // background-color: green;
+                // border-radius: 5px;
+                // width: 100px;
+              }
+    
 
 }

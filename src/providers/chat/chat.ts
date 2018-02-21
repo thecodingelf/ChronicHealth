@@ -18,7 +18,8 @@ export class ChatProvider {
   createMessage(chatName: string, chatMessage: string): firebase.database.ThenableReference {
     return this.Chat.push({
       chatname: chatName,
-      chatmessage: chatMessage
+      chatmessage: chatMessage,
+      date: firebase.database.ServerValue.TIMESTAMP
     });
   }
 

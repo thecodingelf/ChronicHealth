@@ -26,7 +26,7 @@ export class DiaryProvider {
     });
   }
 
-  // Gets the diary entries from reffered list.
+  // Gets the diary entries from refered list.
   getDiary(): firebase.database.Reference {
     return this.diaryLogRef;
   }

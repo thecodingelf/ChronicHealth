@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 // Providers.
 import { AuthProvider } from '../../providers/auth/auth';
 import { ProfileProvider } from '../../providers/profile/profile';
+import { ChatProvider } from './../../providers/chat/chat';
 // Firebase.
 import firebase from 'firebase';
 
@@ -32,7 +33,8 @@ export class LiveStreamPage {
   sendMessage(): void {
     this.ref.push({
       name: this.name.chatname,
-      message: this.newmessage
+      message: this.newmessage,
+      date: firebase.database.ServerValue.TIMESTAMP
     });
     this.newmessage = '';
   }
@@ -61,7 +63,8 @@ export class LiveStreamPage {
         tmp.push({
           key: data.key,
           name: data.val().name,
-          message: data.val().message
+          message: data.val().message,
+          date: data.val().date
         })
       });
       this.messagesList = tmp;

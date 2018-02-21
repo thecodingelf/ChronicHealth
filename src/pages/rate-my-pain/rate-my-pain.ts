@@ -99,7 +99,7 @@ export class RateMyPainPage {
       });
     });
 
-    // Gets the contents od the diary entries and to display them in the view.
+    // Gets the contents of the diary entries and to display them in the view.
     this.diaryProvider.getDiary().on("value", diaryLogSnapshot => {
       this.diaryLog = [];
       diaryLogSnapshot.forEach(snap => {
