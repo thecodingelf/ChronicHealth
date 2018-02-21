@@ -34,7 +34,7 @@
 
       <ion-card *ngFor="let log of logList">
         <ion-list>
-          <ion-item>
+          <ion-item (click)="openModal(log.id)">
             <ion-row>
               <ion-col>
                 <h2>{{log?.log}}</h2>

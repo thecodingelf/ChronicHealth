@@ -9,9 +9,11 @@
 
 <ion-content padding>
 
+  <button ion-button block color="light" (click)="doRadio()">Select activity category</button>
+
   <ion-item>
     <ion-label stacked>{{ 'ADD_LOGS.ACTIVITY_NAME' | translate }}</ion-label>
-    <ion-input [(ngModel)]="logActivity" type="text" placeholder="{{ 'PLACEHOLDERS.ACTIVITY_PLACEHOLDER' | translate }} ?">
+    <ion-input [(ngModel)]="logActivity" type="text" placeholder="{{ 'PLACEHOLDERS.ACTIVITY_PLACEHOLDER' | translate }}">
     </ion-input>
   </ion-item>
 
@@ -25,7 +27,7 @@
     <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="logTime"></ion-datetime>
   </ion-item> -->
 
-  <ion-item>
+<!--   <ion-item>
     <ion-label>{{ 'ADD_LOGS.PAIN_BEFORE' | translate }}</ion-label>
     <ion-select [(ngModel)]="logPainLevelBefore" multiple="false" required placeholder="{{ 'PLACEHOLDERS.LEVELOFPAIN_PLACEHOLDER' | translate }} ?">
       <ion-option value="0">0</ion-option>
@@ -40,14 +42,14 @@
       <ion-option value="9">9</ion-option>
       <ion-option value="10">10</ion-option>
     </ion-select>
-  </ion-item>
+  </ion-item> -->
 
 <!--   <ion-item>
     <ion-label>{{ 'TIME_PICK' | translate }}</ion-label>
     <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="logTime"></ion-datetime>
   </ion-item> -->
 
-  <ion-item>
+<!--   <ion-item>
     <ion-label>{{ 'ADD_LOGS.PAIN_AFTER' | translate }}</ion-label>
     <ion-select [(ngModel)]="logPainLevelAfter" multiple="false" required placeholder="{{ 'PLACEHOLDERS.LEVELOFPAIN_PLACEHOLDER' | translate }} ?">
       <ion-option value="0">0</ion-option>
@@ -62,7 +64,43 @@
       <ion-option value="9">9</ion-option>
       <ion-option value="10">10</ion-option>
     </ion-select>
-  </ion-item>
+  </ion-item> -->
+
+
+      <ion-list>
+    <ion-list-header>
+      Pain before
+      <!-- <ion-badge item-end color="danger">{{logPainLevelBefore}}</ion-badge> -->
+      <ion-badge item-end [ngClass]="{ badgeColor: logPainLevelBefore >= 8 }" [color]="logPainLevelBefore <= 4 ? 'secondary' : 'medium'">
+          {{logPainLevelBefore}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="10" step="1" snaps="true" [(ngModel)]="logPainLevelBefore" [ngClass]="{ rangeColor: logPainLevelBefore >= 8 }" [color]="logPainLevelBefore <= 4 ? 'secondary' : 'medium'">
+          {{logPainLevelBefore}}>
+        <ion-icon range-left color="secondary" name="happy"></ion-icon>
+        <ion-icon range-right color="danger" name="sad"></ion-icon>
+      </ion-range>
+    </ion-item>
+</ion-list>
+
+
+    <ion-list>
+    <ion-list-header>
+      Pain after
+      <!-- <ion-badge item-end color="danger">{{logPainLevelBefore}}</ion-badge> -->
+      <ion-badge item-end [ngClass]="{ badgeColor: logPainLevelAfter >= 8 }" [color]="logPainLevelAfter <= 4 ? 'secondary' : 'medium'">
+          {{logPainLevelAfter}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="10" step="1" snaps="true" [(ngModel)]="logPainLevelAfter" [ngClass]="{ rangeColor: logPainLevelAfter >= 8 }" [color]="logPainLevelAfter <= 4 ? 'secondary' : 'medium'">
+          {{logPainLevelAfter}}>
+        <ion-icon range-left color="secondary" name="happy"></ion-icon>
+        <ion-icon range-right color="danger" name="sad"></ion-icon>
+      </ion-range>
+    </ion-item>
+</ion-list>
+
+
 
   <button ion-button block (click)="createLog(logActivity, logPainLevelBefore, logPainLevelAfter, logTime, logDate)">{{ 'ADD_LOGS.ADD_LOG' | translate }}</button>
 
