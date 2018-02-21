@@ -20,13 +20,15 @@ export class LogProvider {
   }
 
   // Creates the log entry.
-  createLog(logActivity: string, logPainLevelBefore: number, logPainLevelAfter: number, logTime: string, logDate: string): firebase.database.ThenableReference {
+  createLog(logActivity: string, logCategory: string, logPainLevelBefore: number, logPainLevelAfter: number, logTime: string, logDate: string): firebase.database.ThenableReference {
     return this.logListRef.push({
       log: logActivity,
+      category: logCategory,
       painlevelbefore: logPainLevelBefore,
       painlevelafter: logPainLevelAfter,
       date: firebase.database.ServerValue.TIMESTAMP,
-      time: firebase.database.ServerValue.TIMESTAMP
+      time: firebase.database.ServerValue.TIMESTAMP,
+      
 /*    time: logTime,
       date: logDate */
     });

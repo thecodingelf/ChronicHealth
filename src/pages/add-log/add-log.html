@@ -9,7 +9,17 @@
 
 <ion-content padding>
 
-  <button ion-button block color="light" (click)="doRadio()">Select activity category</button>
+  <!-- <button ion-button block color="light" (click)="doRadio()">Select activity category</button> -->
+
+  <ion-item>
+    <ion-label>Select category</ion-label>
+      <ion-select [(ngModel)]="logCategory">
+        <ion-option value="f">Fitness</ion-option>
+        <ion-option value="m">Office work</ion-option>
+        <ion-option value="a">Physical work</ion-option>
+        <ion-option value="a">House chores</ion-option>
+    </ion-select>
+  </ion-item>
 
   <ion-item>
     <ion-label stacked>{{ 'ADD_LOGS.ACTIVITY_NAME' | translate }}</ion-label>
@@ -102,6 +112,6 @@
 
 
 
-  <button ion-button block (click)="createLog(logActivity, logPainLevelBefore, logPainLevelAfter, logTime, logDate)">{{ 'ADD_LOGS.ADD_LOG' | translate }}</button>
+  <button ion-button block (click)="createLog(logActivity, logPainLevelBefore, logCategory, logPainLevelAfter, logTime, logDate)">{{ 'ADD_LOGS.ADD_LOG' | translate }}</button>
 
 </ion-content>

@@ -93,7 +93,8 @@ export class RateMyPainPage {
           painlevelbefore: snap.val().painlevelbefore,
           painlevelafter: snap.val().painlevelafter,
           time: snap.val().time,
-          date: snap.val().date
+          date: snap.val().date,
+          category: snap.val().category
         });
         return false;
       });
