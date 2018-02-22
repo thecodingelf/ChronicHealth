@@ -19,7 +19,7 @@ import * as firebase from 'firebase';
 export class ModalPage {
 
   // Sets the view to painbefore when opening the modal.
-  content: string = "painbefore";
+  // content: string = "painbefore";
 
   public currentLog: any = {};
 

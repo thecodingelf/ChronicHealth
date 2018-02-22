@@ -14,10 +14,10 @@
   <ion-item>
     <ion-label>Select category</ion-label>
       <ion-select [(ngModel)]="logCategory">
-        <ion-option value="f">Fitness</ion-option>
-        <ion-option value="m">Office work</ion-option>
-        <ion-option value="a">Physical work</ion-option>
-        <ion-option value="a">House chores</ion-option>
+        <ion-option value="Fitness">Fitness</ion-option>
+        <ion-option value="Office work">Office work</ion-option>
+        <ion-option value="Physical work">Physical work</ion-option>
+        <ion-option value="House chores">House chores</ion-option>
     </ion-select>
   </ion-item>
 
@@ -112,6 +112,6 @@
 
 
 
-  <button ion-button block (click)="createLog(logActivity, logPainLevelBefore, logCategory, logPainLevelAfter, logTime, logDate)">{{ 'ADD_LOGS.ADD_LOG' | translate }}</button>
+  <button ion-button block (click)="createLog(logCategory, logActivity, logPainLevelBefore, logPainLevelAfter, logTime, logDate)">{{ 'ADD_LOGS.ADD_LOG' | translate }}</button>
 
 </ion-content>

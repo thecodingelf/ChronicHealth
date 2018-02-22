@@ -90,11 +90,11 @@ export class RateMyPainPage {
         this.logList.push({
           id: snap.key,
           log: snap.val().log,
+          category: snap.val().category,
           painlevelbefore: snap.val().painlevelbefore,
           painlevelafter: snap.val().painlevelafter,
           time: snap.val().time,
-          date: snap.val().date,
-          category: snap.val().category
+          date: snap.val().date
         });
         return false;
       });
