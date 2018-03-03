@@ -16,9 +16,9 @@ export class AddLogPage {
 
   // Creates the log entry to the database and directs user back to main screen.
   //logCategory: string, logCategory,
-  createLog(logActivity: string, logPainLevelBefore: number, logPainLevelAfter: number,  logTime: string, logDate: string, logCategory: string): void {
+  createLog(logCategory: string, logActivity: string, logPainLevelBefore: number, logPainLevelAfter: number,  logTime: string, logDate: string ): void {
     this.logProvider
-      .createLog(logActivity, logPainLevelBefore, logPainLevelAfter, logTime, logDate, logCategory)
+      .createLog(logCategory, logActivity, logPainLevelBefore, logPainLevelAfter, logTime, logDate )
       .then(newLog => {
         this.navCtrl.pop();
       });
