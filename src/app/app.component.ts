@@ -27,8 +27,8 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any }>;
 
-  constructor( @Inject('defaultLanguage')
-    private defaultLanguage: string,
+  constructor(@Inject('defaultLanguage')
+  private defaultLanguage: string,
     private toast: ToastService,
     private translate: TranslateService,
     private config: Config,
@@ -37,7 +37,7 @@ export class MyApp {
     splashScreen: SplashScreen,
     public authProvider: AuthProvider,
     public alertCtrl: AlertController
-    ) {
+  ) {
 
     // Initiliazes the default language.
     translate.setDefaultLang(defaultLanguage);
@@ -82,7 +82,7 @@ export class MyApp {
     this.pages = [
       { title: 'Profiili', component: 'ProfilePage' },
       { title: 'Graphs', component: 'GraphsPage' }
-/*       { title: 'Description', component: 'AddDescriptionPage' }, */
+      /*    { title: 'Description', component: 'AddDescriptionPage' }, */
     ];
 
     platform.ready().then(() => {
@@ -94,7 +94,7 @@ export class MyApp {
 
   }
 
-    goHome(): void {
+  goHome(): void {
     this.nav.setRoot('HomePage')
   }
 

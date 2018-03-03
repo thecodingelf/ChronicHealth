@@ -28,11 +28,6 @@ export class LogProvider {
       painlevelafter: logPainLevelAfter,
       date: firebase.database.ServerValue.TIMESTAMP,
       time: firebase.database.ServerValue.TIMESTAMP,
-      
-      // logCategory: string,
-      
-/*    time: logTime,
-      date: logDate */
     });
   }
 
